@@ -1,16 +1,16 @@
 body {
   margin: 0;
-  font-family: century-gothic;
+  font-family: century-gothic, Arial;
 }
 
 header {
-  content-align: center;
-  justify-content: center;
+  text-align: center;
+  justify-items: center;
   background-color: lightblue;
   width: 100%;
   height: 50px;
 }
 
 h1 {
-  
+  font-size: 30px;
 }
