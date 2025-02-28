@@ -30,7 +30,4 @@ body {
 #header ul li {
   display: inline-block;
 }
-#header * {
-  border: 3px solid green;
-}
 
