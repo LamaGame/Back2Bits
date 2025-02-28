@@ -14,13 +14,13 @@ body {
   height: 80px;
 }
 #header.menubar{
+  list-style-type: none;
   justify-content: space-evenly;
   padding: 0;
   margin: 0;
 }
 #header.menubar li{
   display: inline-block;
-  list-style-type: none;
 }
 #header.menubar li a{
   text-decoration: none;
