@@ -18,7 +18,7 @@ body {
   align-items: center;
 }
 #header img {
-  justify-self: first;
+  align-self: first;
 }
 #header ul {
   display: inline-block;
