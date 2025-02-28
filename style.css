@@ -5,7 +5,7 @@ body {
 }
 
 #header {
-  display: inline-block;
+  display: flex;
   justify-items: space-between;
   margin: 0px;
   padding: 30px;
@@ -15,11 +15,12 @@ body {
   width: 100%;
   height: 80px;
 }
-
+#header *{
+  display: inline-block;
+}
 #header.menubar{
-  display: inline;
   justify-content: space-evenly;
 }
-#header.menubar.a{
+#header.menubar a{
   text-decoration: none;
 }
