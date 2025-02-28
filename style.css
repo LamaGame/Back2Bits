@@ -6,6 +6,7 @@ body {
 
 #header {
   display: flex;
+  justify-content: space-evenly;
   margin: 0px;
   position: absolute;
   top: 0px;
