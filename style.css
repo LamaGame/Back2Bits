@@ -5,7 +5,7 @@ body {
 }
 
 #header {
-  display: flex;
+  display: inline;
   justify-items: space-between;
   margin: 0px;
   padding: 30px;
