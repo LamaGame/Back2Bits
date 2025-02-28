@@ -7,7 +7,7 @@ body {
 #header {
   display: flex;
   margin: 0px;
-  padding: 30px;
+  align-items: center;
   position: absolute;
   top: 0px;
   background-color: lightblue;
