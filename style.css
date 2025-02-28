@@ -12,6 +12,8 @@ body {
   background-color: lightblue;
   width: 100%;
   height: 80px;
+  text-align: center;
+  justify-content: space-around;
 }
 #header img {
   justify-self: first;
@@ -26,11 +28,4 @@ body {
 }
 #header ul li {
   display: inline-block;
-}
-#header.title {
-  display: inline-block;
-  justify-self: center;
-}
-#header.cart {
-  justify-self: space-around;
 }
