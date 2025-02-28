@@ -3,7 +3,9 @@ body {
   padding: 0px;
   font-family: Arial;
 }
-
+#header * {
+  border: 3px solid green;
+}
 #header {
   display: flex;
   margin: 0px;
