@@ -15,7 +15,7 @@ body {
   height: 80px;
 }
 #header ul {
-  
+  display: inline-block;
   list-style-type: none;
   justify-content: space-evenly;
   padding: 0;
@@ -26,5 +26,4 @@ body {
 }
 #header.title {
   display: inline-block;
-  justify-self: center;
 }
