@@ -3,7 +3,7 @@ body {
   padding: 0px;
   font-family: Arial;
 }
-#header * {
+#header > * {
   border: 3px solid green;
 }
 #header {
