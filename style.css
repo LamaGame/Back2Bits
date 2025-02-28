@@ -14,7 +14,6 @@ body {
   height: 80px;
   text-align: center;
   justify-content: center;
-  align-items: center;
 }
 #header img {
   justify-self: first;
