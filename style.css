@@ -6,9 +6,8 @@ body {
 
 #header {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   margin: 0px;
-  padding: 30px;
   position: absolute;
   top: 0px;
   background-color: lightblue;
@@ -17,9 +16,12 @@ body {
 }
 #header.menubar{
   justify-content: space-evenly;
+  padding: 0;
+  margin: 0;
 }
 #header.menubar li{
   display: inline-block;
+  list-style-type: none;
 }
 #header.menubar li a{
   text-decoration: none;
