@@ -15,7 +15,7 @@ body {
   width: 100%;
   height: 80px;
 }
-#header *{
+#header > *{
   display: inline-block;
 }
 #header.menubar{
