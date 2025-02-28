@@ -6,23 +6,22 @@ body {
 
 #header {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   margin: 0px;
-  padding: 0px;
   position: absolute;
   top: 0px;
   background-color: lightblue;
   width: 100%;
   height: 80px;
 }
-#header.menubar {
-  display: flex;
+#header ul {
+  display: inline-flex;
   list-style-type: none;
   justify-content: space-evenly;
   padding: 0;
   margin: 0;
 }
-#header.menubar li {
+#header ul li {
   display: inline-block;
 }
 #header.title {
