@@ -10,7 +10,7 @@ body {
   position: absolute;
   top: 0px;
   background-color: lightblue;
-  width: 100%;
+  width: 100vw;
   height: 80px;
 }
 #header.menubar{
@@ -21,7 +21,4 @@ body {
 }
 #header.menubar li{
   display: inline-block;
-}
-#header.menubar li a{
-  text-decoration: none;
 }
