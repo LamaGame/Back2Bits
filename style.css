@@ -25,6 +25,7 @@ body {
   height: 60px;
 }
 #header ul {
+  width: 40%;
   display: inline-block;
   list-style-type: none;
   justify-self: space-around;
