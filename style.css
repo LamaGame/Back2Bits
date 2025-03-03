@@ -16,7 +16,7 @@ body {
   background-position: center;
   background-size: auto;
   width: 100vw;
-  max-height: 80px;
+  height: 80px;
   align-items: center;
   justify-content: space-between;
 }
