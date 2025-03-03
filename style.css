@@ -11,13 +11,14 @@ body {
   top: 0px;
   background-color: lightblue;
   width: 100%;
-  max-height: 80px;
+  height: 80px;
   text-align: center;
   align-items: center;
   justify-content: space-around;
 }
 #header img {
   justify-self: first;
+  height: 60px;
 }
 #header ul {
   display: inline-block;
