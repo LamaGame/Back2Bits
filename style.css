@@ -15,7 +15,7 @@ body {
   background-attachment: fixed;
   background-position: center;
   background-size: cover; 
-  max-width: 100vw;
+  max-width: device-width;
   max-height: 80px;
   align-items: center;
   justify-content: space-around;
