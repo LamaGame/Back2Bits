@@ -5,7 +5,7 @@ body {
   color: White;
 }
 #header {
-  display: flex;
+  display: ;
   margin: 0px;
   padding: 0px;
   position: absolute;
@@ -15,7 +15,7 @@ body {
   background-attachment: fixed;
   background-position: center;
   background-size: cover; 
-  max-width: device-width;
+  width: 100%;
   max-height: 80px;
   align-items: center;
   justify-content: space-around;
