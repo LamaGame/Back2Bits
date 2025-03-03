@@ -7,7 +7,7 @@ body {
 #header {
   display: flex;
   margin: 0px;
-  padding-inline: 30px;
+  padding: 0px;
   position: absolute;
   top: 0px;
   background-image: url("./gradient-dith.png");
@@ -21,12 +21,12 @@ body {
   justify-content: space-between;
 }
 #header img {
-  justify-self: first;
+  float: left;
   height: 60px;
 }
 #header ul {
   width: 40%;
-  display: inline-block;
+  display: inline;
   list-style-type: none;
   justify-self: space-around;
   justify-content: space-evenly;
