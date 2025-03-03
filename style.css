@@ -9,7 +9,7 @@ body {
   padding: 0px;
   position: absolute;
   top: 0px;
-  background-color: lightblue;
+  background-image: url("./gradient-dith.png");
   width: 100%;
   height: 80px;
   align-items: center;
