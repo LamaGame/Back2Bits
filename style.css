@@ -8,6 +8,7 @@ body {
   display: flex;
   margin: 0px;
   padding: 0px;
+  padding-inline: 30px;
   position: absolute;
   top: 0px;
   background-image: url("./gradient-dith.png");
