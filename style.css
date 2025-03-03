@@ -18,7 +18,7 @@ body {
   max-width: 100%;
   max-height: 80px;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 #header img {
   height: 60px;
