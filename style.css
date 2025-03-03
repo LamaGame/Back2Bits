@@ -11,6 +11,10 @@ body {
   position: absolute;
   top: 0px;
   background-image: url("./gradient-dith.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: auto;
   width: 100%;
   max-height: 80px;
   align-items: center;
