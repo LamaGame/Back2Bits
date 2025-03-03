@@ -14,9 +14,9 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
-  background-size: cover;
+  background-size: auto;
   width: 100vw;
-  height: 80px;
+  max-height: 80px;
   align-items: center;
   justify-content: space-between;
 }
