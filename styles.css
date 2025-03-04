@@ -275,7 +275,7 @@ footer {
 .sidebar {
     padding-left: 15px;
     height: 100%;
-    width: 250px; /* Set initial width to make it visible */
+    width: 220px; /* Set initial width to make it visible */
     position: fixed;
     z-index: 2;
     top: 80px;
@@ -324,7 +324,7 @@ footer {
         width: 160px;
     }
     #products {
-        margin: 0 0 0 180px;
+        margin: 0 0 0 0;
     }
     header h1 {
         font-size: 1.5rem;
@@ -333,6 +333,6 @@ footer {
         width: 160px;
     }
     #checkout-page {
-        margin: 0 0 0 160px;
+        margin: 0 200px 0 160px;
     }
 }
