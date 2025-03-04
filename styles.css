@@ -75,7 +75,7 @@ main {
 
 #products {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 2rem;
     justify-content: center;
 }
@@ -262,7 +262,7 @@ footer {
     width: 250px; /* Set initial width to make it visible */
     position: fixed;
     z-index: 3;
-    top: 0;
+    top: 80px;
     left: 0;
     background-color: #1a1a1a;
     overflow-x: hidden;
