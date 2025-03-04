@@ -54,6 +54,15 @@
                 <button>In den Einkaufswagen</button>
             </div>
         </div>
+        <div class="product">
+            <img src="images/Nintendo-gamecube.png" alt="Gamecube Bild">
+            <div>
+                <h3>Gamecube</h3>
+                <p>Zustand: Wie Neu</p>
+                <p class="price">Preis: <strong><span id="price-product-8"></span>€</strong></p>
+                <button>In den Einkaufswagen</button>
+            </div>
+        </div>
     </section>
 
     <h2 id="category2">Atari</h2>
@@ -148,6 +157,7 @@
     document.getElementById('price-product-5').innerText = itemPrices["Produkt 5"];
     document.getElementById('price-product-6').innerText = itemPrices["Produkt 6"];
     document.getElementById('price-product-7').innerText = itemPrices["Produkt 7"];
+    document.getElementById('price-product-8').innerText = itemPrices["Nintendo Switch"];
 
     function toggleSidebar() {
         const sidebar = document.getElementById('sidebar');
