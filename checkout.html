@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout</title>
+    <title>Warenkorb</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
 <header>
-    <h1>Checkout</h1>
+    <h1>
+        </h1>
 </header>
 
 <div id="ad-left" class="ad-container">
@@ -23,14 +24,14 @@
 </div>
 
 <main id="checkout-page">
-    <h2>Your Cart</h2>
+    <h2>Warenkorb</h2>
     <ul id="cart-items">
         <!-- Cart items will be dynamically added here -->
     </ul>
     <p id="cart-item-count"></p>
     <p id="total-price"></p>
-    <button id="checkout-button">Proceed to Checkout</button>
-    <button id="back-button">Back to Shop</button>
+    <button id="checkout-button">Zur Kasse</button>
+    <button id="back-button">Einkauf fortsetzen</button>
 </main>
 
 <footer style="position: fixed;">
@@ -45,7 +46,7 @@
     const itemCounts = {};
     const itemPrices = {
         "Product 1": 99.95,
-        "Product 2": 25,
+        "Product 2": 399.90,
         "Product 3": 30,
         "Product 4": 40,
         "Product 5": 50,
@@ -105,15 +106,15 @@
         }
 
         if (cartItems.length === 0) {
-            cartItemsList.innerHTML = '<li>Your cart is empty</li>';
+            cartItemsList.innerHTML = '<li>Dein Warenkorb ist Leer</li>';
         }
 
-        cartItemCount.innerText = `Total items: ${cartItems.length}`;
-        totalPriceElement.innerText = `Total price: ${totalPrice.toFixed(2)}€`;
+        cartItemCount.innerText = `Produkte: ${cartItems.length}`;
+        totalPriceElement.innerText = `Summe: ${totalPrice.toFixed(2)}€`;
     }
 
     document.getElementById('checkout-button').addEventListener('click', () => {
-        alert('Proceeding to checkout...');
+        alert('Weiterleitung zur Kasse...');
     });
 
     document.getElementById('back-button').addEventListener('click', () => {
