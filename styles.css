@@ -329,4 +329,10 @@ footer {
     header h1 {
         font-size: 1.5rem;
     }
+    #ad-left {
+        width: 160px;
+    }
+    #checkout-page {
+        margin: 0 0 0 160px;
+    }
 }
