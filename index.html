@@ -11,6 +11,7 @@
 <header>
     <img src="images/B2B-Logo.png" alt="Logo" id="logo">
     <h1> Willkommen bei Back2Bits</h1>
+    </div>
     <nav>
         <ul>
             <li><a href="#">Startseite</a></li>
@@ -31,7 +32,7 @@
     <div class="ad-content">Werbefläche</div>
     <div class="ad-content">Werbefläche</div>
 </div>
-
+<main>
 <section id="products">
     <h2 id="category1">Nintendo</h2>
     <section id="products-category1" class="products-grid">
@@ -40,7 +41,7 @@
             <div>
                 <h3>Gameboy CLASSIC</h3>
                 <p>Zustand: Wie Neu</p>
-                <p class="price">Preis: <span id="price-product-1"></span>€</p>
+                <p class="price">Preis: <strong><span id="gameboy-classic"></span>€</strong></p>
                 <button>In den Einkaufswagen</button>
             </div>
         </div>
@@ -49,7 +50,7 @@
             <div>
                 <h3>Nintendo Entertainment System</h3>
                 <p>Zustand: Wie Neu</p>
-                <p class="price">Preis: <span id="price-product-2"></span>€</p>
+                <p class="price">Preis: <strong><span id="price-product-2"></span>€</strong></p>
                 <button>In den Einkaufswagen</button>
             </div>
         </div>
@@ -59,17 +60,21 @@
     <section id="products-category2" class="products-grid">
         <div class="product">
             <img src="placeholder.jpg" alt="Produkt 3 Bild">
-            <h3>Produkt 3</h3>
-            <p>Beschreibung von Produkt 3.</p>
-            <p class="price">Preis: <span id="price-product-3"></span>€</p>
-            <button>In den Einkaufswagen</button>
+            <div>
+                <h3>Produkt 3</h3>
+                <p>Beschreibung von Produkt 3.</p>
+                <p class="price">Preis: <span id="price-product-3"></span>€</p>
+                <button>In den Einkaufswagen</button>
+            </div>
         </div>
         <div class="product">
             <img src="placeholder.jpg" alt="Produkt 4 Bild">
-            <h3>Produkt 4</h3>
-            <p>Beschreibung von Produkt 4.</p>
-            <p class="price">Preis: <span id="price-product-4"></span>€</p>
-            <button>In den Einkaufswagen</button>
+            <div>
+                <h3>Produkt 4</h3>
+                <p>Beschreibung von Produkt 4.</p>
+                <p class="price">Preis: <span id="price-product-4"></span>€</p>
+                <button>In den Einkaufswagen</button>
+            </div>
         </div>
     </section>
 
@@ -77,30 +82,36 @@
     <section id="products-category3" class="products-grid">
         <div class="product">
             <img src="placeholder.jpg" alt="Produkt 5 Bild">
-            <h3>Produkt 5</h3>
-            <p>Beschreibung von Produkt 5.</p>
-            <p class="price">Preis: <span id="price-product-5"></span>€</p>
-            <button>In den Einkaufswagen</button>
+            <div>
+                <h3>Produkt 5</h3>
+                <p>Beschreibung von Produkt 5.</p>
+                <p class="price">Preis: <span id="price-product-5"></span>€</p>
+                <button>In den Einkaufswagen</button>
+            </div>
         </div>
         <div class="product">
             <img src="placeholder.jpg" alt="Produkt 6 Bild">
-            <h3>Produkt 6</h3>
-            <p>Beschreibung von Produkt 6.</p>
-            <p class="price">Preis: <span id="price-product-6"></span>€</p>
-            <button>In den Einkaufswagen</button>
+            <div>
+                <h3>Produkt 6</h3>
+                <p>Beschreibung von Produkt 6.</p>
+                <p class="price">Preis: <span id="price-product-6"></span>€</p>
+                <button>In den Einkaufswagen</button>
+            </div>
         </div>
         <div class="product">
             <img src="placeholder.jpg" alt="Produkt 7 Bild">
-            <h3>Produkt 7</h3>
-            <p>Beschreibung von Produkt 7.</p>
-            <p class="price">Preis: <span id="price-product-7"></span>€</p>
-            <button>In den Einkaufswagen</button>
+            <div>
+                <h3>Produkt 7</h3>
+                <p>Beschreibung von Produkt 7.</p>
+                <p class="price">Preis: <span id="price-product-7"></span>€</p>
+                <button>In den Einkaufswagen</button>
+            </div>
         </div>
     </section>
 </section>
-
+</main>
 <footer>
-    <p>&copy; 2024 Webshop. Keine Rechte vorbehalten.</p>
+    <p>&copy; 2024 Back2Bits &nbsp; Keine Rechte vorbehalten.</p>
 </footer>
 
 <script src="prices.js"></script>
@@ -130,7 +141,7 @@
     updateCartCount();
 
     // Set product prices
-    document.getElementById('price-product-1').innerText = itemPrices["Gameboy CLASSIC"];
+    document.getElementById('gameboy-classic').innerText = itemPrices["Gameboy CLASSIC"];
     document.getElementById('price-product-2').innerText = itemPrices["Nintendo Entertainment System"];
     document.getElementById('price-product-3').innerText = itemPrices["Produkt 3"];
     document.getElementById('price-product-4').innerText = itemPrices["Produkt 4"];
