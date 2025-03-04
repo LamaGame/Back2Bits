@@ -9,22 +9,21 @@
 </head>
 <body>
 <header>
-    <h1>
-        </h1>
+    <h1>Back2Bits</h1>
 </header>
 
 <div id="ad-left" class="ad-container">
-    <div class="ad-content">Ad Space</div>
-    <div class="ad-content">Ad Space</div>
+    <div class="ad-content">Werbefläche</div>
+    <div class="ad-content">Werbefläche</div>
 </div>
 
 <div id="ad-right" class="ad-container">
-    <div class="ad-content">Ad Space</div>
-    <div class="ad-content">Ad Space</div>
+    <div class="ad-content">Werbefläche</div>
+    <div class="ad-content">Werbefläche</div>
 </div>
 
 <main id="checkout-page">
-    <h2>Warenkorb</h2>
+    <h2>Dein Warenkorb</h2>
     <ul id="cart-items">
         <!-- Cart items will be dynamically added here -->
     </ul>
@@ -35,24 +34,16 @@
 </main>
 
 <footer style="position: fixed;">
-    <p>&copy; 2024 Webshop. No rights reserved.</p>
+    <p>&copy; 2024 Webshop. Keine Rechte vorbehalten.</p>
 </footer>
 
+<script src="prices.js"></script>
 <script>
     let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
     const cartItemsList = document.getElementById('cart-items');
     const cartItemCount = document.getElementById('cart-item-count');
     const totalPriceElement = document.getElementById('total-price');
     const itemCounts = {};
-    const itemPrices = {
-        "Product 1": 99.95,
-        "Product 2": 399.90,
-        "Product 3": 30,
-        "Product 4": 40,
-        "Product 5": 50,
-        "Product 6": 60,
-        "Product 7": 70
-    };
 
     cartItems.forEach(item => {
         itemCounts[item] = (itemCounts[item] || 0) + 1;
@@ -65,16 +56,17 @@
             const li = document.createElement('li');
             li.innerHTML = `
                 <div class="cart-item-details">
-                    <img src="placeholder.jpg" alt="${item} Image">
+                    <img src="placeholder.jpg" alt="${item} Bild">
                     <span>${item}</span>
+                    <span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>${itemPrices[item].toFixed(2)}€</strong></span>
                 </div>
                 <div class="cart-item-amount">
-                    <span>x${count}</span>
+                    <span><strong>x${count}</strong>&nbsp;</span>
                 </div>
                 <div class="cart-controls">
                     <button class="increase">+</button>
                     <button class="decrease">-</button>
-                    <button class="remove">Remove</button>
+                    <button class="remove">Entfernen</button>
                 </div>
             `;
             cartItemsList.appendChild(li);
@@ -106,7 +98,7 @@
         }
 
         if (cartItems.length === 0) {
-            cartItemsList.innerHTML = '<li>Dein Warenkorb ist Leer</li>';
+            cartItemsList.innerHTML = '<li>Dein Warenkorb ist leer</li>';
         }
 
         cartItemCount.innerText = `Produkte: ${cartItems.length}`;

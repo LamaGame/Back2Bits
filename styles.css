@@ -11,12 +11,13 @@ header {
     color: #00ff00;
     padding: 1rem 0;
     text-align: center;
-    position: relative;
+    position: fixed;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    z-index: 4;
+    z-index: 3;
 }
 
 header h1 {
@@ -26,13 +27,11 @@ header h1 {
 }
 
 #cart-icon {
-    position: absolute;
-    top: auto;
-    right: auto;
+    position: relative;
+    right: 60px; /* Adjust right position */
     color: #00ff00;
     font-size: 1.5rem;
     cursor: pointer;
-    position: relative;
 }
 
 #cart-count {
@@ -67,53 +66,58 @@ nav ul li a {
     font-family: 'Press Start 2P', cursive;
 }
 
-main {
-    padding: 2rem;
-    margin-left: 270px; /* Adjust margin to account for sidebar width and padding */
-    margin-right: 220px;
+section#products {
+    padding: 3rem;
+    padding-top: 6rem;
+    margin: 0 200px 0 250px;
 }
 
 #products {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 2rem;
-    justify-content: center;
+    display: block;
 }
 
 .products-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 2rem;
     justify-content: center;
 }
 
 .product {
+    display: flex;
+    flex-direction: column;
     background-color: #1a1a1a;
-    border: 1px solid #00ff00;
+    line-height: 1.5rem;
     border-radius: 25px;
+    width: 15rem;
     padding: 1rem;
+    height: 25rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    transition: transform 0.2s, box-shadow 0.2s;
+    justify-content: space-between;
+    transition: transform 0.5s, box-shadow 0.5s;
 }
 
 .product:hover {
     transform: scale(1.02);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0px 16px #00ff006c;
 }
 
 .product img {
     max-width: 100%;
+    max-height: 60%;
     height: auto;
     margin-bottom: 1rem;
+    border-radius: 20px;
 }
 
 .product h3 {
-    margin: 0.5rem 0;
+    margin: 0;
     font-family: 'Press Start 2P', cursive;
 }
 
 .product p {
+    margin: 0;
     color: #00ff00;
 }
 
@@ -122,6 +126,7 @@ main {
     color: #1a1a1a;
     border: none;
     padding: 0.5rem 1rem;
+    max-width: min-content;
     cursor: pointer;
     border-radius: 5px;
     font-family: 'Press Start 2P', cursive;
@@ -151,7 +156,7 @@ main {
 }
 
 #checkout-page h2 {
-    margin-bottom: 1rem;
+    margin: 4rem 0 2rem 0;
     font-family: 'Press Start 2P', cursive;
 }
 
@@ -180,7 +185,6 @@ main {
 
 .cart-item-details img {
     width: 50px;
-    height: 50px;
     margin-right: 1rem;
     border-radius: 5px;
 }
@@ -198,6 +202,7 @@ main {
 
 .cart-controls button:hover {
     transform: scale(1.05);
+    transition: transform  ;
 }
 
 #checkout-page button {
@@ -261,7 +266,7 @@ footer {
     height: 100%;
     width: 250px; /* Set initial width to make it visible */
     position: fixed;
-    z-index: 3;
+    z-index: 2;
     top: 80px;
     left: 0;
     background-color: #1a1a1a;
