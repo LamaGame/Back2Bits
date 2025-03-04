@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="de" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+    <h1>Checkout</h1>
+</header>
+
+<div id="ad-left" class="ad-container">
+    <div class="ad-content">Ad Space</div>
+    <div class="ad-content">Ad Space</div>
+</div>
+
+<div id="ad-right" class="ad-container">
+    <div class="ad-content">Ad Space</div>
+    <div class="ad-content">Ad Space</div>
+</div>
+
+<main id="checkout-page">
+    <h2>Your Cart</h2>
+    <ul id="cart-items">
+        <!-- Cart items will be dynamically added here -->
+    </ul>
+    <p id="cart-item-count"></p>
+    <p id="total-price"></p>
+    <button id="checkout-button">Proceed to Checkout</button>
+    <button id="back-button">Back to Shop</button>
+</main>
+
+<footer style="position: fixed;">
+    <p>&copy; 2024 Webshop. No rights reserved.</p>
+</footer>
+
+<script>
+    let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartItemsList = document.getElementById('cart-items');
+    const cartItemCount = document.getElementById('cart-item-count');
+    const totalPriceElement = document.getElementById('total-price');
+    const itemCounts = {};
+    const itemPrices = {
+        "Product 1": 10,
+        "Product 2": 25,
+        "Product 3": 30,
+        "Product 4": 40,
+        "Product 5": 50,
+        "Product 6": 60,
+        "Product 7": 70
+    };
+
+    cartItems.forEach(item => {
+        itemCounts[item] = (itemCounts[item] || 0) + 1;
+    });
+
+    function updateCart() {
+        cartItemsList.innerHTML = '';
+        let totalPrice = 0;
+        for (const [item, count] of Object.entries(itemCounts)) {
+            const li = document.createElement('li');
+            li.innerHTML = `
+                <div class="cart-item-details">
+                    <img src="placeholder.jpg" alt="${item} Image">
+                    <span>${item}</span>
+                </div>
+                <div class="cart-item-amount">
+                    <span>x${count}</span>
+                </div>
+                <div class="cart-controls">
+                    <button class="increase">+</button>
+                    <button class="decrease">-</button>
+                    <button class="remove">Remove</button>
+                </div>
+            `;
+            cartItemsList.appendChild(li);
+
+            li.querySelector('.increase').addEventListener('click', () => {
+                itemCounts[item]++;
+                cartItems.push(item);
+                localStorage.setItem('cart', JSON.stringify(cartItems));
+                updateCart();
+            });
+
+            li.querySelector('.decrease').addEventListener('click', () => {
+                if (itemCounts[item] > 1) {
+                    itemCounts[item]--;
+                    cartItems.splice(cartItems.indexOf(item), 1);
+                    localStorage.setItem('cart', JSON.stringify(cartItems));
+                    updateCart();
+                }
+            });
+
+            li.querySelector('.remove').addEventListener('click', () => {
+                cartItems = cartItems.filter(cartItem => cartItem !== item);
+                delete itemCounts[item];
+                localStorage.setItem('cart', JSON.stringify(cartItems));
+                updateCart();
+            });
+
+            totalPrice += itemPrices[item] * count;
+        }
+
+        if (cartItems.length === 0) {
+            cartItemsList.innerHTML = '<li>Your cart is empty</li>';
+        }
+
+        cartItemCount.innerText = `Total items: ${cartItems.length}`;
+        totalPriceElement.innerText = `Total price: ${totalPrice.toFixed(2)}€`;
+    }
+
+    document.getElementById('checkout-button').addEventListener('click', () => {
+        alert('Proceeding to checkout...');
+    });
+
+    document.getElementById('back-button').addEventListener('click', () => {
+        window.location.href = 'index.html';
+    });
+
+    updateCart();
+</script>
+</body>
+</html>

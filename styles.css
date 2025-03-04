@@ -1,0 +1,297 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+    background-color: #2b2b2b;
+    color: #f4f4f4;
+}
+
+header {
+    background-color: #1a1a1a;
+    color: #00ff00;
+    padding: 1rem 0;
+    text-align: center;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    z-index: 1;
+}
+
+header h1 {
+    margin: 0;
+    font-family: 'Press Start 2P', cursive;
+    text-align: left; /* Align text to the left */
+}
+
+#cart-icon {
+    position: absolute;
+    top: auto;
+    right: auto;
+    color: #00ff00;
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: relative;
+}
+
+#cart-count {
+    position: absolute;
+    top: -0.5rem;
+    right: -0.5rem;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.8rem;
+}
+
+#logo {
+    height: 50px;
+    margin-right: 1rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: #00ff00;
+    text-decoration: none;
+    font-family: 'Press Start 2P', cursive;
+}
+
+main {
+    padding: 2rem;
+    margin-left: 270px; /* Adjust margin to account for sidebar width and padding */
+    margin-right: 220px;
+}
+
+#products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+}
+
+.product {
+    background-color: #1a1a1a;
+    border: 1px solid #00ff00;
+    border-radius: 25px;
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.product:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.product img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.product h3 {
+    margin: 0.5rem 0;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.product p {
+    color: #00ff00;
+}
+
+.product button {
+    background-color: #00ff00;
+    color: #1a1a1a;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.product button:hover {
+    background-color: #00cc00;
+}
+
+.cart-controls button {
+    background-color: #00ff00;
+    color: #1a1a1a;
+    border: none;
+    padding: 0.2rem 0.5rem;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 0.5rem;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.cart-controls button:hover {
+    background-color: #00cc00;
+}
+
+#checkout-page {
+    padding: 2rem;
+}
+
+#checkout-page h2 {
+    margin-bottom: 1rem;
+    font-family: 'Press Start 2P', cursive;
+}
+
+#checkout-page ul {
+    list-style: none;
+    padding: 0;
+}
+
+#checkout-page ul li {
+    background-color: #1a1a1a;
+    border: 1px solid #00ff00;
+    border-radius: 5px;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-item-details {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.cart-item-details img {
+    width: 50px;
+    height: 50px;
+    margin-right: 1rem;
+    border-radius: 5px;
+}
+
+.cart-item-amount {
+    text-align: right;
+    flex-shrink: 0;
+    margin-left: 1rem;
+}
+
+.cart-controls {
+    display: flex;
+    align-items: center;
+}
+
+.cart-controls button:hover {
+    transform: scale(1.05);
+}
+
+#checkout-page button {
+    background-color: #00ff00;
+    color: #1a1a1a;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: 'Press Start 2P', cursive;
+}
+
+#checkout-page button:hover {
+    background-color: #00cc00;
+}
+
+footer {
+    background-color: #1a1a1a;
+    color: #00ff00;
+    text-align: center;
+    padding: 1rem 0;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    z-index: 2; /* Ensure footer is above ad containers */
+    font-family: 'Press Start 2P', cursive;
+}
+
+.ad-container {
+    position: fixed;
+    top: 80px; /* Reduce top to minimize space between ad containers and header */
+    bottom: 0;
+    width: 200px;
+    background-color: #2b2b2b;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    overflow-y: auto;
+    z-index: 1;
+}
+
+#ad-left {
+    left: 0;
+}
+
+#ad-right {
+    right: 0;
+}
+
+.ad-content {
+    background-color: #1a1a1a;
+    border: 1px solid #00ff00;
+    border-radius: 5px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: #00ff00;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.sidebar {
+    height: 100%;
+    width: 250px; /* Set initial width to make it visible */
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    background-color: #1a1a1a;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    padding-right: 10px; /* Add padding to create distance */
+}
+
+.sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #00ff00;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.sidebar.active {
+    width: 0; /* Collapse the sidebar when active */
+}
