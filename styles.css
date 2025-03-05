@@ -75,7 +75,8 @@ header h1 {
 
 nav ul {
     list-style: none;
-    padding: 0;
+    display: inline-flex;
+    flex-direction: row;
 }
 
 nav ul li {
