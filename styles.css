@@ -1,14 +1,16 @@
+* {
+    scroll-behavior: smooth;
+}
 html {
     background-color: #1a1a1a;
-    overscroll-behaviour-y: none;
 }
 body {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Press Start 2P', 'Courier New', Courier, monospace;
     margin: 0;
     padding: 0;
     background-color: #2b2b2b;
     color: #f4f4f4;
-    scroll-behavior: smooth;
+    overscroll-behaviour-y: none;
 }
 
 html button {
