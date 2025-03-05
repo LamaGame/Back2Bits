@@ -26,6 +26,18 @@ const productData = {
             alt: "Gamecube Bild"
         }
     ],
+    
+    "Sega": [
+        {
+            id: "master-system",
+            name: "SEGA Master System",
+            description: "Beschreibung",
+            price: 269.99,
+            image: "images/sega-master-system",
+            alt: "Master System Bild"
+        },
+    ],
+    
     "Atari": [
         {
             id: "atari-2600",
@@ -90,7 +102,7 @@ function generateProductLayout() {
 
             // Buy button
             const button = document.createElement("button");
-            button.textContent = "In den Einkaufswagen";
+            button.textContent = "In den Warenkorb";
 
             // Append elements
             detailsDiv.appendChild(productName);
