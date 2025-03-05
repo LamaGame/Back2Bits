@@ -84,7 +84,7 @@ const productData = {
             name: "Atari 2600",
             description: "Der Klassiker unter den Spielkonsolen.",
             price: 229.99,
-            image: "images/atari-2600.png",
+            image: "images/Atari-2600.png",
             alt: "Atari 2600 Bild"
         },
         {
@@ -92,7 +92,7 @@ const productData = {
             name: "Atari Jaguar",
             description: "Eine der ersten 64-bit Konsolen.",
             price: 699.99,
-            image: "images/atari-jaguar.png",
+            image: "images/Atari-jaguar.png",
             alt: "Atari Jaguar Bild"
         },
         {
