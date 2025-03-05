@@ -48,11 +48,11 @@
     if (sidebar.style.left === "-200px") {
         sidebar.style.left = "0"; // Open sidebar
         openBtn.style.display = "none"; // Hide open button
-        document.getElementsByTagName("main").style.marginLeft = "200px"
+        document.getElementsByTagName("main").style.paddingLeft = "200px"
     } else {
         sidebar.style.left = "-200px"; // Close sidebar
         openBtn.style.display = "block"; // Show open button
-        document.getElementsByTagName("main").style.marginLeft = "0px"
+        document.getElementsByTagName("main").style.paddingLeft = "0px"
     }
 }
 </script>
