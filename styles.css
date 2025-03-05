@@ -36,10 +36,11 @@ header {
     width: 100vw;
     height: 4rem;
     display: flex;
+    flex-flow: row no-wrap;
     justify-content: flex-start;
     gap: 1rem 0;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 1rem 0;
     z-index: 3;
 }
 
