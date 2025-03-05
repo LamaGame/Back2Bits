@@ -1,6 +1,5 @@
 * {
     scroll-behavior: smooth;
-    overscroll-behaviour-y: none;
 }
 html {
     background-color: #1a1a1a;
@@ -11,6 +10,7 @@ body {
     padding: 0;
     background-color: #2b2b2b;
     color: #f4f4f4;
+    overscroll-behaviour-y: none;
 }
 
 html button {
