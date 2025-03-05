@@ -42,8 +42,8 @@
 <script src="scripts/products.js"></script>
 <script>
         function toggleSidebar() {
-    const sidebar = document.getElementById("sidebar");
-    const openBtn = document.getElementById("open-btn");
+    let sidebar = document.getElementById("sidebar");
+    let openBtn = document.getElementById("open-btn");
 
     if (sidebar.style.left === "-200px") {
         sidebar.style.left = "0"; // Open sidebar
@@ -80,28 +80,6 @@
     });
 
     updateCartCount();
-
-    // Set product prices
-    document.querySelector('.name #gameboy-classic').innerText = productData["gameboy-classic"]["name"];
-    document.querySelector('.description #gameboy-classic').innerText = productData["gameboy-classic"]["description"];
-    document.querySelector('.price #gameboy-classic').innerText = productData["gameboy-classic"]["price"];
-    
-    document.getElementById('price-product-2').innerText = productData["nes-classic"]["name"];
-    document.getElementById('price-product-2').innerText = productData["nes-classic"]["description"];
-    document.getElementById('price-product-2').innerText = productData["nes-classic"]["price"];
-    
-    document.getElementById('gamecube-lila').innerText = productData["gamecube-lila"]["price"];
-    
-    document.getElementById('price-product-3').innerText = productData["Produkt 3"]["price"];
-    document.getElementById('price-product-4').innerText = productData["Produkt 4"]["price"];
-    document.getElementById('price-product-5').innerText = productData["Produkt 5"]["price"];
-    document.getElementById('price-product-6').innerText = productData["Produkt 6"]["price"];
-    document.getElementById('price-product-7').innerText = productData["Produkt 7"]["price"];
-
-    function toggleSidebar() {
-        const sidebar = document.getElementById('sidebar');
-        sidebar.classList.toggle('active');
-    }
 </script>
 </body>
 </html>
