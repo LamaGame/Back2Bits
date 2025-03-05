@@ -1,5 +1,6 @@
 html {
     background-color: #1a1a1a;
+    overscroll-behaviour-y: none;
 }
 body {
     font-family: 'Courier New', Courier, monospace;
