@@ -80,13 +80,13 @@ nav ul {
 nav ul li {
     display: inline-block;
     margin: 0 1rem;
-    white-space: nowrap;
 }
 
 nav ul li a {
     color: #00ff00;
     text-decoration: none;
     font-family: 'Press Start 2P', cursive;
+    white-space: nowrap;
 }
 
 #products {
