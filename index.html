@@ -22,11 +22,12 @@
 </header>
 
 <div id="sidebar" class="sidebar">
+    <button class="close-btn" onclick="toggleSidebar()">×</button>
     <a href="#category1">Nintendo</a>
     <a href="#category2">Atari</a>
     <a href="#category3">SEGA</a>
 </div>
-    
+<button id="open-btn" onclick="toggleSidebar()">☰</button>
 <main>
     
     <section id="products">
@@ -39,6 +40,20 @@
 </footer>
 
 <script src="scripts/products.js"></script>
+<script>
+        function toggleSidebar() {
+    let sidebar = document.getElementById("sidebar");
+    let openBtn = document.getElementById("open-btn");
+
+    if (sidebar.style.left === "-250px") {
+        sidebar.style.left = "0"; // Open sidebar
+        openBtn.style.display = "none"; // Hide open button
+    } else {
+        sidebar.style.left = "-250px"; // Close sidebar
+        openBtn.style.display = "block"; // Show open button
+    }
+}
+</script>
 <script>
     const cartIcon = document.getElementById('cart-icon');
     const cartCount = document.getElementById('cart-count');
