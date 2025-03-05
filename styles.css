@@ -3,6 +3,7 @@
 }
 html {
     background-color: #1a1a1a;
+    overscroll-behaviour-y: none;
 }
 body {
     font-family: 'Courier New', Courier, monospace;
@@ -27,6 +28,7 @@ html button:active {
 
 main {
     margin: 0;
+    overscroll-behaviour-y: none;
 }
     
 header {
