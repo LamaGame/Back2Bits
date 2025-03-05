@@ -1,0 +1,112 @@
+// Product data stored in an object
+const productData = {
+    "Nintendo": [
+        {
+            id: "gameboy-classic",
+            name: "Gameboy Classic",
+            description: "Ein klassischer Handheld von Nintendo.",
+            price: 99,
+            image: "images/Nintendo-gameboy-classic.png",
+            alt: "Gameboy Bild"
+        },
+        {
+            id: "nes",
+            name: "Nintendo Entertainment System",
+            description: "Zustand: Wie Neu",
+            price: 120,
+            image: "images/Nintendo-NES.png",
+            alt: "NES Bild"
+        },
+        {
+            id: "gamecube",
+            name: "Gamecube",
+            description: "Zustand: Wie Neu",
+            price: 80,
+            image: "images/Nintendo-gamecube.png",
+            alt: "Gamecube Bild"
+        }
+    ],
+    "Atari": [
+        {
+            id: "atari-2600",
+            name: "Atari 2600",
+            description: "Der Klassiker unter den Spielkonsolen.",
+            price: 75,
+            image: "images/atari-2600.png",
+            alt: "Atari 2600 Bild"
+        },
+        {
+            id: "atari-jaguar",
+            name: "Atari Jaguar",
+            description: "Eine der ersten 64-bit Konsolen.",
+            price: 150,
+            image: "images/atari-jaguar.png",
+            alt: "Atari Jaguar Bild"
+        }
+    ]
+};
+
+// Function to generate the product layout dynamically
+function generateProductLayout() {
+    const container = document.getElementById("product-container");
+
+    for (const category in productData) {
+        // Create category title
+        const categoryTitle = document.createElement("h2");
+        categoryTitle.id = `category-${category.toLowerCase()}`;
+        categoryTitle.textContent = category;
+        container.appendChild(categoryTitle);
+
+        // Create product section
+        const section = document.createElement("section");
+        section.id = `products-category-${category.toLowerCase()}`;
+        section.classList.add("products-grid");
+
+        productData[category].forEach(product => {
+            // Create product div
+            const productDiv = document.createElement("div");
+            productDiv.classList.add("product");
+
+            // Create product image
+            const img = document.createElement("img");
+            img.src = product.image;
+            img.alt = product.alt;
+
+            // Create product details div
+            const detailsDiv = document.createElement("div");
+
+            // Product name
+            const productName = document.createElement("h3");
+            productName.textContent = product.name;
+
+            // Product description
+            const productDesc = document.createElement("p");
+            productDesc.textContent = product.description;
+
+            // Product price
+            const productPrice = document.createElement("p");
+            productPrice.classList.add("price");
+            productPrice.innerHTML = `<strong>${product.price} €</strong>`;
+
+            // Buy button
+            const button = document.createElement("button");
+            button.textContent = "In den Einkaufswagen";
+
+            // Append elements
+            detailsDiv.appendChild(productName);
+            detailsDiv.appendChild(productDesc);
+            detailsDiv.appendChild(productPrice);
+            detailsDiv.appendChild(button);
+
+            productDiv.appendChild(img);
+            productDiv.appendChild(detailsDiv);
+            section.appendChild(productDiv);
+        });
+
+        // Append section to the container
+        container.appendChild(section);
+    }
+}
+
+// Run function on page load
+document.addEventListener("DOMContentLoaded", generateProductLayout);
