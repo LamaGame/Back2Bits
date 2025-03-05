@@ -3,7 +3,6 @@
 }
 html {
     background-color: #1a1a1a;
-    overscroll-behaviour-y: none;
 }
 body {
     font-family: 'Courier New', Courier, monospace;
@@ -11,7 +10,6 @@ body {
     padding: 0;
     background-color: #2b2b2b;
     color: #f4f4f4;
-    overscroll-behaviour-y: none;
 }
 
 html button {
@@ -27,38 +25,36 @@ html button:active {
 }
 
 main {
-    margin: 0;
-    overscroll-behaviour-y: none;
+    padding-top: 6rem;
 }
     
 header {
     background-color: #1a1a1a;
     color: #00ff00;
     position: fixed;
-    width: 100vw;
-    height: 5rem;
+    width: 100%;
+    height: 1.5rem;
     display: flex;
-    flex-flow: row no-wrap;
-    justify-content: flex-start;
-    gap: 1rem 0;
+    flex-flow: row nowrap;
+    justify-content: space-between;
     align-items: center;
-    padding-inline: 1rem;
+    padding: 2rem 1rem;
     z-index: 3;
 }
 
 header h1 {
     margin: 0;
     font-family: 'Press Start 2P', cursive;
-    font-size: 3rem;
+    font-size: max(min(2vw, 2rem), 1.4rem);
     text-align: left; /* Align text to the left */
 }
 
 #cart-icon {
     position: relative;
     display: inline-block;
-    right: 60px; /* Adjust right position */
     color: #00ff00;
-    font-size: 1.5rem;
+    font-size: 2rem;
+    right: 3rem;
     cursor: pointer;
 }
 
@@ -88,11 +84,11 @@ nav ul li a {
     text-decoration: none;
     font-family: 'Press Start 2P', cursive;
     white-space: nowrap;
+    font-size: max(min(1.5vw, 1.5rem), 1rem)
 }
 
 #products {
     padding: 3rem;
-    padding-top: 6rem;
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -118,18 +114,18 @@ nav ul li a {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
     justify-content: space-between;
-    transition: transform 0.5s ease-out, box-shadow 0.5s ease-in;
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-out;
 }
 
 .product:hover {
-    transform: scale(1.02);
-    box-shadow: 0 0px 16px #00ff006c;
+    transform: scale(1.01);
+    box-shadow: 0 0px 12px #00a1003b;
 }
 
 .product img {
     width: 100%;
     height: auto;
-    max-height: 55%;
+    max-height: 50%;
     object-fit: contain;
     margin-bottom: 1rem;
     border-radius: 20px;
@@ -174,7 +170,7 @@ nav ul li a {
 #checkout-page {
     padding: 3rem;
     padding-top: 4rem;
-    margin: 0 200px 0 250px;
+    margin-inline: 20%;
 }
 
 #checkout-page h2 {
@@ -228,6 +224,7 @@ nav ul li a {
     color: #1a1a1a;
     border: none;
     padding: 0.5rem 1rem;
+    margin-block-end: 0.3rem;
     cursor: pointer;
     border-radius: 5px;
     font-family: 'Press Start 2P', cursive;
@@ -251,7 +248,6 @@ footer {
 
 .sidebar {
     height: 100%;
-    width: 200px;
     max-width: 200px;
     position: fixed;
     z-index: 2;
@@ -261,6 +257,7 @@ footer {
     overflow-x: hidden;
     transition: 0.5s;
     text-align: center;
+    padding: 10px;
 }
 
 .sidebar a {
@@ -279,7 +276,7 @@ footer {
 #open-btn { 
     position: fixed;
     top: 5rem;
-    left: 0px
+    left: 0px;
     font-size: 3fr;
     width: 32px;
     height: 32px;
@@ -304,11 +301,5 @@ footer {
     .product {
         min-width: 100%;
         max-width: 100%;
-    }
-    header h1 {
-        font-size: 1.5rem;
-    }
-    #checkout-page {
-        margin: 0 200px 0 160px;
     }
 }

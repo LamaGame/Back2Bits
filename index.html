@@ -9,10 +9,9 @@
 </head>
 <body>
 <header>
-    <h1> Willkommen bei <span style="color: #327dc8;">Back2Bits</span></h1>
+    <h1> Willkommen bei <br><span style="color: #327dc8;">Back2Bits</span></h1>
     <nav>
         <ul>
-            <li><a href="#">Startseite</a></li>
             <li><a href="#">Über uns</a></li>
             <li><a href="#">Kontakt</a></li>
         </ul>
@@ -20,12 +19,13 @@
     <div id="cart-icon">🛒<span id="cart-count">0</span></div>
 </header>
 
+<button id="open-btn" onclick="toggleSidebar()">☰</button>
+
 <div id="sidebar" class="sidebar">
     <a href="#category-nintendo">Nintendo</a>
     <a href="#category-sega">SEGA</a>
     <a href="#category-atari">Atari</a>
 </div>
-<button id="open-btn" onclick="toggleSidebar()">☰</button>
     
 <main>
     
@@ -54,29 +54,31 @@
 }
 </script>
 <script>
-    const cartIcon = document.getElementById('cart-icon');
-    const cartCount = document.getElementById('cart-count');
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    document.addEventListener('DOMContentLoaded', () => {
+        const cartIcon = document.getElementById('cart-icon');
+        const cartCount = document.getElementById('cart-count');
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-    function updateCartCount() {
-        cartCount.innerText = cart.length;
-    }
+        function updateCartCount() {
+            cartCount.innerText = cart.length;
+        }
 
-    document.querySelectorAll('.product button').forEach(button => {
-        button.addEventListener('click', () => {
-            const product = button.parentElement;
-            const productName = product.querySelector('.name').innerText;
-            cart.push(productName);
-            localStorage.setItem('cart', JSON.stringify(cart));
-            updateCartCount();
+        document.querySelectorAll('.product button').forEach(button => {
+            button.addEventListener('click', () => {
+                const product = button.parentElement;
+                const productId = product.getAttribute('data-id');
+                cart.push(productId);
+                localStorage.setItem('cart', JSON.stringify(cart));
+                updateCartCount();
+            });
         });
-    });
+        
+        cartIcon.addEventListener('click', () => {
+            window.location.href = 'checkout.html';
+        });
 
-    cartIcon.addEventListener('click', () => {
-        window.location.href = 'checkout.html';
+        updateCartCount();
     });
-
-    updateCartCount();
 </script>
 </body>
 </html>

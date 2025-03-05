@@ -12,16 +12,6 @@
     <h1>Back2Bits &nbsp; Checkout</h1>
 </header>
 
-<div id="ad-left" class="ad-container">
-    <div class="ad-content">Werbefläche</div>
-    <div class="ad-content">Werbefläche</div>
-</div>
-
-<div id="ad-right" class="ad-container">
-    <div class="ad-content">Werbefläche</div>
-    <div class="ad-content">Werbefläche</div>
-</div>
-
 <main id="checkout-page">
     <h2>Dein Warenkorb</h2>
     <ul id="cart-items">
@@ -37,82 +27,85 @@
     <p>&copy; 2024 Webshop. Keine Rechte vorbehalten.</p>
 </footer>
 
-<script src="prices.js"></script>
+<script src="scripts/products.js"></script>
 <script>
-    let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-    const cartItemsList = document.getElementById('cart-items');
-    const cartItemCount = document.getElementById('cart-item-count');
-    const totalPriceElement = document.getElementById('total-price');
-    const itemCounts = {};
+    document.addEventListener('DOMContentLoaded', () => {
+        let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+        const cartItemsList = document.getElementById('cart-items');
+        const cartItemCount = document.getElementById('cart-item-count');
+        const totalPriceElement = document.getElementById('total-price');
+        const itemCounts = {};
 
-    cartItems.forEach(item => {
-        itemCounts[item] = (itemCounts[item] || 0) + 1;
-    });
+        cartItems.forEach(item => {
+            itemCounts[item] = (itemCounts[item] || 0) + 1;
+        });
 
-    function updateCart() {
-        cartItemsList.innerHTML = '';
-        let totalPrice = 0;
-        for (const [item, count] of Object.entries(itemCounts)) {
-            const li = document.createElement('li');
-            li.innerHTML = `
-                <div class="cart-item-details">
-                    <img src="placeholder.jpg" alt="${item} Bild">
-                    <span>${item}</span>
-                </div>
-                <div class="cart-item-amount">
-                    <span><strong>${itemPrices[item].toFixed(2)}€ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x${count}</strong>&nbsp;</span>
-                </div>
-                <div class="cart-controls">
-                    <button class="increase">+</button>
-                    <button class="decrease">-</button>
-                    <button class="remove">Entfernen</button>
-                </div>
-            `;
-            cartItemsList.appendChild(li);
+        function updateCart() {
+            cartItemsList.innerHTML = '';
+            let totalPrice = 0;
+            for (const [itemId, count] of Object.entries(itemCounts)) {
+                const product = products[itemId];
+                const li = document.createElement('li');
+                li.innerHTML = `
+                    <div class="cart-item-details">
+                        <img src="${product.image}" alt="${product.name} Bild">
+                        <span>${product.name}</span>
+                    </div>
+                    <div class="cart-item-amount">
+                        <span><strong>${product.price.toFixed(2)}€ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x${count}</strong>&nbsp;</span>
+                    </div>
+                    <div class="cart-controls">
+                        <button class="increase">+</button>
+                        <button class="decrease">-</button>
+                        <button class="remove">Entfernen</button>
+                    </div>
+                `;
+                cartItemsList.appendChild(li);
 
-            li.querySelector('.increase').addEventListener('click', () => {
-                itemCounts[item]++;
-                cartItems.push(item);
-                localStorage.setItem('cart', JSON.stringify(cartItems));
-                updateCart();
-            });
-
-            li.querySelector('.decrease').addEventListener('click', () => {
-                if (itemCounts[item] > 1) {
-                    itemCounts[item]--;
-                    cartItems.splice(cartItems.indexOf(item), 1);
+                li.querySelector('.increase').addEventListener('click', () => {
+                    itemCounts[itemId]++;
+                    cartItems.push(itemId);
                     localStorage.setItem('cart', JSON.stringify(cartItems));
                     updateCart();
-                }
-            });
+                });
 
-            li.querySelector('.remove').addEventListener('click', () => {
-                cartItems = cartItems.filter(cartItem => cartItem !== item);
-                delete itemCounts[item];
-                localStorage.setItem('cart', JSON.stringify(cartItems));
-                updateCart();
-            });
+                li.querySelector('.decrease').addEventListener('click', () => {
+                    if (itemCounts[itemId] > 1) {
+                        itemCounts[itemId]--;
+                        cartItems.splice(cartItems.indexOf(itemId), 1);
+                        localStorage.setItem('cart', JSON.stringify(cartItems));
+                        updateCart();
+                    }
+                });
 
-            totalPrice += itemPrices[item] * count;
+                li.querySelector('.remove').addEventListener('click', () => {
+                    cartItems = cartItems.filter(cartItem => cartItem !== itemId);
+                    delete itemCounts[itemId];
+                    localStorage.setItem('cart', JSON.stringify(cartItems));
+                    updateCart();
+                });
+
+                totalPrice += product.price * count;
+            }
+
+            if (cartItems.length === 0) {
+                cartItemsList.innerHTML = '<li>Dein Warenkorb ist leer</li>';
+            }
+
+            cartItemCount.innerText = `Produkte: ${Object.values(itemCounts).reduce((a, b) => a + b, 0)}`;
+            totalPriceElement.innerText = `Summe: ${totalPrice.toFixed(2)}€`;
         }
 
-        if (cartItems.length === 0) {
-            cartItemsList.innerHTML = '<li>Dein Warenkorb ist leer</li>';
-        }
+        document.getElementById('checkout-button').addEventListener('click', () => {
+            alert('Weiterleitung zur Kasse...');
+        });
 
-        cartItemCount.innerText = `Produkte: ${cartItems.length}`;
-        totalPriceElement.innerText = `Summe: ${totalPrice.toFixed(2)}€`;
-    }
+        document.getElementById('back-button').addEventListener('click', () => {
+            window.location.href = 'index.html';
+        });
 
-    document.getElementById('checkout-button').addEventListener('click', () => {
-        alert('Weiterleitung zur Kasse...');
+        updateCart();
     });
-
-    document.getElementById('back-button').addEventListener('click', () => {
-        window.location.href = 'index.html';
-    });
-
-    updateCart();
 </script>
 </body>
 </html>
