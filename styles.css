@@ -273,17 +273,6 @@ footer {
     color: #f1f1f1;
 }
 
-.sidebar .closebtn {
-    position: absolute;
-    top: 80px;
-    float: right;
-    font-size:20px;
-    padding: 12px 12px;
-    background-color: #00ff00;
-    border-radius: 20px;
-    color: white;
-    cursor: pointer;
-}
 #open-btn { 
     position: fixed;
     top: 80px;
