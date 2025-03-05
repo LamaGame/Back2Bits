@@ -135,7 +135,7 @@
     document.querySelectorAll('.product button').forEach(button => {
         button.addEventListener('click', () => {
             const product = button.parentElement;
-            const productName = product.querySelector('h3').innerText;
+            const productName = product.querySelector('.name').innerText;
             cart.push(productName);
             localStorage.setItem('cart', JSON.stringify(cart));
             updateCartCount();
@@ -149,13 +149,16 @@
     updateCartCount();
 
     // Set product prices
-    document.querySelector(".name #gameboy-classic").innerText = productData["gameboy-classic"]["name"];
-    document.querySelector(".description #gameboy-classic").innerText = productData["gameboy-classic"]["description"];
-    document.querySelector(".price #gameboy-classic").innerText = productData["gameboy-classic"]["price"];
+    document.querySelector('.name #gameboy-classic').innerText = productData["gameboy-classic"]["name"];
+    document.querySelector('.description #gameboy-classic').innerText = productData["gameboy-classic"]["description"];
+    document.querySelector('.price #gameboy-classic').innerText = productData["gameboy-classic"]["price"];
+    
     document.getElementById('price-product-2').innerText = productData["nes-classic"]["name"];
     document.getElementById('price-product-2').innerText = productData["nes-classic"]["description"];
     document.getElementById('price-product-2').innerText = productData["nes-classic"]["price"];
+    
     document.getElementById('gamecube-lila').innerText = productData["gamecube-lila"]["price"];
+    
     document.getElementById('price-product-3').innerText = productData["Produkt 3"]["price"];
     document.getElementById('price-product-4').innerText = productData["Produkt 4"]["price"];
     document.getElementById('price-product-5').innerText = productData["Produkt 5"]["price"];
