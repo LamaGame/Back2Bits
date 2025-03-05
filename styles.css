@@ -248,37 +248,6 @@ footer {
     font-family: 'Press Start 2P', cursive;
 }
 
-.ad-container {
-    position: fixed;
-    top: 80px; /* Reduce top to minimize space between ad containers and header */
-    bottom: 0;
-    width: 200px;
-    background-color: #2b2b2b;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 1rem;
-    overflow-y: auto;
-    z-index: 1;
-}
-
-#ad-left {
-    left: 0;
-}
-
-#ad-right {
-    right: 0;
-}
-
-.ad-content {
-    background-color: #1a1a1a;
-    border: 1px solid #00ff00;
-    border-radius: 5px;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    text-align: center;
-    color: #00ff00;
-    font-family: 'Press Start 2P', cursive;
-}
-
 .sidebar {
     padding-left: 15px;
     height: 100%;
@@ -314,27 +283,23 @@ footer {
     font-size: 36px;
     margin-left: 50px;
 }
-
-.sidebar.active {
-    width: 0; /* Collapse the sidebar when active */
+#open-btn {
+    font-size: 18px;
+    padding: 10px 20px;
+    background-color: #00ff00;
+    color: white;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 20px;
 }
-
-/* Hide navbar in mobile format */
 @media (max-width: 768px) {
     nav {
         display: none;
     }
-    #ad-right {
-        display: none;
-    }
     .sidebar {
-        width: 120px;
-    }
-    .sidebar a {
-        font-size: 20px;
-    }
-    #products {
-        margin: 0 0 0 0;
+        max-width: 120px;
     }
     .products-grid {
     	justify-content: center;    
@@ -345,9 +310,6 @@ footer {
     }
     header h1 {
         font-size: 1.5rem;
-    }
-    #ad-left {
-        width: 160px;
     }
     #checkout-page {
         margin: 0 200px 0 160px;
