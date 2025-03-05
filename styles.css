@@ -255,7 +255,7 @@ footer {
     position: fixed;
     z-index: 2;
     top: 80px;
-    left: 0;
+    left: -200px;
     background-color: #1a1a1a;
     overflow-x: hidden;
     transition: 0.5s;
@@ -299,7 +299,7 @@ footer {
         display: none;
     }
     .sidebar {
-        max-width: 120px;
+        width: 120px;
     }
     .products-grid {
     	justify-content: center;    
