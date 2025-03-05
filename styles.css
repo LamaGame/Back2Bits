@@ -40,7 +40,7 @@ header {
     justify-content: flex-start;
     gap: 1rem 0;
     align-items: center;
-    padding: 1rem 0;
+    padding-inline: 1rem;
     z-index: 3;
 }
 
@@ -52,6 +52,7 @@ header h1 {
 
 #cart-icon {
     position: relative;
+    display: inline-block;
     right: 60px; /* Adjust right position */
     color: #00ff00;
     font-size: 1.5rem;
@@ -69,15 +70,10 @@ header h1 {
     font-size: 0.8rem;
 }
 
-#logo {
-    height: 50px;
-    margin-right: 1rem;
-}
-
 nav ul {
     list-style: none;
     display: inline-flex;
-    flex-direction: row;
+    flex-flow: row no-wrap;
 }
 
 nav ul li {
