@@ -13,7 +13,7 @@ const productData = {
             id: "nes",
             name: "Nintendo Entertainment System",
             description: "Zustand: Wie Neu",
-            price: 399.99,
+            price: 399.90,
             image: "images/Nintendo-NES.png",
             alt: "NES Bild"
         },
