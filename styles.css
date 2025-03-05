@@ -34,7 +34,7 @@ header {
     color: #00ff00;
     position: fixed;
     width: 100vw;
-    height: 4rem;
+    height: 5rem;
     display: flex;
     flex-flow: row no-wrap;
     justify-content: flex-start;
@@ -132,6 +132,7 @@ nav ul li a {
     border-radius: 20px;
     margin-top: auto;
     margin-bottom: auto;
+    pointer-events: none;
 }
 
 .product h3 {
@@ -205,6 +206,7 @@ nav ul li a {
     width: 50px;
     margin-right: 1rem;
     border-radius: 5px;
+    pointer-events: none;
 }
 
 .cart-item-amount {
@@ -250,7 +252,7 @@ footer {
     max-width: 200px;
     position: fixed;
     z-index: 2;
-    top: 4rem;
+    top: 5rem;
     left: -200px;
     background-color: #1a1a1a;
     overflow-x: hidden;
