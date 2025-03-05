@@ -5,7 +5,7 @@ html {
     background-color: #1a1a1a;
 }
 body {
-    font-family: 'Press Start 2P', 'Courier New', Courier, monospace;
+    font-family: 'Courier New', Courier, monospace;
     margin: 0;
     padding: 0;
     background-color: #2b2b2b;
@@ -251,7 +251,7 @@ footer {
 .sidebar {
     padding-left: 15px;
     height: 100%;
-    width: 200px; /* Set initial width to make it visible */
+    width: 200px;
     position: fixed;
     z-index: 2;
     top: 80px;
@@ -278,7 +278,7 @@ footer {
 
 .sidebar .closebtn {
     position: absolute;
-    top: 0;
+    top: 80;
     right: 25px;
     font-size: 36px;
     margin-left: 50px;
@@ -291,7 +291,7 @@ footer {
     border: none;
     cursor: pointer;
     position: absolute;
-    top: 20px;
+    top: 80px;
     left: 20px;
 }
 @media (max-width: 768px) {
