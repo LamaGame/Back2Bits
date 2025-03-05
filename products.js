@@ -1,4 +1,4 @@
-const itemPrices = {
+const productData = {
     
     "gameboy-classic": {name: "Gameboy CLASSIC", description: "Beschreibung", price: 99.95},
     "Nintendo Entertainment System": 399.95,
