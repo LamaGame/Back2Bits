@@ -282,12 +282,13 @@ footer {
     font-size: 3fr;
     width: 32px;
     height: 32px;
-    padding: 12px 12px;
+    text-align: center;
     background-color: #00ff00;
     border-radius: 0 0 15px 0;
     border: none;
     color: white;
     cursor: pointer;
+    transition: 0.5s;
 }
 @media (max-width: 768px) {
     header nav {
