@@ -5,9 +5,17 @@ const productData = {
             id: "gameboy-classic",
             name: "Gameboy Classic",
             description: "Ein klassischer Handheld von Nintendo.",
-            price: 99.99,
+            price: 84.99,
             image: "images/Nintendo-gameboy-classic.png",
-            alt: "Gameboy Bild"
+            alt: "Gameboy Classic Bild"
+        },
+        {
+            id: "gameboy-color",
+            name: "Gameboy Color",
+            description: "Ein klassischer Handheld von Nintendo.",
+            price: 149.99,
+            image: "images/Nintendo-gameboy-color.png",
+            alt: "Gameboy Color Bild"
         },
         {
             id: "nes",
@@ -24,7 +32,15 @@ const productData = {
             price: 80,
             image: "images/Nintendo-gamecube.png",
             alt: "Gamecube Bild"
-        }
+        },
+        {
+            id: "virtual-boy",
+            name: "Virtual Boy",
+            description: "Eine der ersten 'VR' Konsolen.",
+            price: 499.99,
+            image: "images/Nintendo-virtual-boy.png",
+            alt: "Virtual Boy Bild"
+        },
     ],
     
     "Sega": [
