@@ -36,7 +36,7 @@ const productData = {
         {
             id: "virtual-boy",
             name: "Virtual Boy",
-            description: "Eine der ersten 'VR' Konsolen.",
+            description: "Eine der ersten VR Konsolen.",
             price: 499.99,
             image: "images/Nintendo-virtual-boy.png",
             alt: "Virtual Boy Bild"
