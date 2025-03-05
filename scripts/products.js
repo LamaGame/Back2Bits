@@ -20,16 +20,16 @@ const productData = {
         {
             id: "nes",
             name: "Nintendo Entertainment System",
-            description: "Zustand: Wie Neu",
-            price: 399.90,
+            description: "Beschreibung",
+            price: 399.99,
             image: "images/Nintendo-NES.png",
             alt: "NES Bild"
         },
         {
             id: "gamecube",
             name: "Gamecube",
-            description: "Zustand: Wie Neu",
-            price: 80,
+            description: "Beschreibung",
+            price: 129.99,
             image: "images/Nintendo-gamecube.png",
             alt: "Gamecube Bild"
         },
