@@ -247,7 +247,6 @@ footer {
 }
 
 .sidebar {
-    padding-left: 15px;
     height: 100%;
     width: 200px;
     position: fixed;
@@ -257,12 +256,11 @@ footer {
     background-color: #1a1a1a;
     overflow-x: hidden;
     transition: 0.5s;
-    padding-top: 60px;
-    padding-right: 10px; /* Add padding to create distance */
+    padding-inline: 12px;
 }
 
 .sidebar a {
-    padding: 8px;
+    padding-block: 8px;
     text-decoration: none;
     font-size: 25px;
     color: #00ff00;
@@ -277,20 +275,20 @@ footer {
 .sidebar .closebtn {
     position: absolute;
     top: 80;
-    right: 25px;
+    right: 12px;
     font-size: 36px;
-    margin-left: 50px;
 }
 #open-btn {
-    font-size: 18px;
-    padding: 10px 20px;
+    font-size:20px;
+    padding: 12px 12px;
     background-color: #00ff00;
+    border-radius: 10px;
     color: white;
     border: none;
     cursor: pointer;
-    position: absolute;
+    position: fixed;
     top: 80px;
-    left: 20px;
+    left: 10px;
 }
 @media (max-width: 768px) {
     header nav {
