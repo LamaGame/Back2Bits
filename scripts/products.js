@@ -98,7 +98,7 @@ function generateProductLayout() {
             // Product price
             const productPrice = document.createElement("p");
             productPrice.classList.add("price");
-            productPrice.innerHTML = `<strong>${product.price} €</strong>`;
+            productPrice.innerHTML = `<strong>${product.price.toLocaleString("de-DE", { minimumFractionDigits: 2, maximumFractionDigits: 2 })} €</strong>`;
 
             // Buy button
             const button = document.createElement("button");
