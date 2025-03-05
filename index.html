@@ -42,14 +42,14 @@
 <script src="scripts/products.js"></script>
 <script>
         function toggleSidebar() {
-    let sidebar = document.getElementById("sidebar");
-    let openBtn = document.getElementById("open-btn");
+    const sidebar = document.getElementById("sidebar");
+    const openBtn = document.getElementById("open-btn");
 
-    if (sidebar.style.left === "-250px") {
+    if (sidebar.style.left === "-200px") {
         sidebar.style.left = "0"; // Open sidebar
         openBtn.style.display = "none"; // Hide open button
     } else {
-        sidebar.style.left = "-250px"; // Close sidebar
+        sidebar.style.left = "-200px"; // Close sidebar
         openBtn.style.display = "block"; // Show open button
     }
 }
