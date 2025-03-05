@@ -48,26 +48,34 @@ const productData = {
             id: "master-system",
             name: "SEGA Master System",
             description: "Beschreibung",
-            price: 269.99,
+            price: 129.99,
             image: "images/SEGA-master-system.png",
             alt: "SEGA Master System Bild"
         },
         {
-            id: "sega-saturn",
+            id: "saturn",
             name: "SEGA Saturn",
             description: "Beschreibung",
-            price: 269.99,
+            price: 179.99,
             image: "images/SEGA-saturn.png",
             alt: "SEGA Saturn Bild"
         },
         {
-            id: "master-system",
+            id: "mega-drive",
             name: "SEGA Mega Drive",
             description: "Beschreibung",
-            price: 269.99,
+            price: 149.99,
             image: "images/SEGA-mega-drive.png",
             alt: "SEGA Mega Drive Bild"
         },
+        {
+            id: "md-nomad",
+            name: "SEGA MD Nomad",
+            description: "Beschreibung.",
+            price: 499.99,
+            image: "images/SEGA-nomad.png",
+            alt: "SEGA Nomad Bild"
+        }
     ],
     
     "Atari": [
@@ -75,7 +83,7 @@ const productData = {
             id: "atari-2600",
             name: "Atari 2600",
             description: "Der Klassiker unter den Spielkonsolen.",
-            price: 75,
+            price: 229.99,
             image: "images/atari-2600.png",
             alt: "Atari 2600 Bild"
         },
@@ -83,7 +91,7 @@ const productData = {
             id: "atari-jaguar",
             name: "Atari Jaguar",
             description: "Eine der ersten 64-bit Konsolen.",
-            price: 150,
+            price: 699.99,
             image: "images/atari-jaguar.png",
             alt: "Atari Jaguar Bild"
         },
@@ -91,7 +99,7 @@ const productData = {
             id: "Atari-lynx",
             name: "Atari Lynx",
             description: "Beschreibung.",
-            price: 150,
+            price: 219.99,
             image: "images/Atari-lynx.png",
             alt: "Atari Lynx Bild"
         }
