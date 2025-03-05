@@ -275,7 +275,7 @@ footer {
 .sidebar {
     padding-left: 15px;
     height: 100%;
-    width: 220px; /* Set initial width to make it visible */
+    width: 200px; /* Set initial width to make it visible */
     position: fixed;
     z-index: 2;
     top: 80px;
@@ -321,7 +321,10 @@ footer {
         display: none;
     }
     .sidebar {
-        width: 160px;
+        width: 120px;
+    }
+    .sidebar a {
+        font-size: 20px;
     }
     #products {
         margin: 0 0 0 0;
