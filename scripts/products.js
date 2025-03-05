@@ -49,8 +49,24 @@ const productData = {
             name: "SEGA Master System",
             description: "Beschreibung",
             price: 269.99,
-            image: "images/sega-master-system",
-            alt: "Master System Bild"
+            image: "images/SEGA-master-system",
+            alt: "SEGA Master System Bild"
+        },
+        {
+            id: "sega-saturn",
+            name: "SEGA Saturn",
+            description: "Beschreibung",
+            price: 269.99,
+            image: "images/SEGA-saturn",
+            alt: "SEGA Saturn Bild"
+        },
+        {
+            id: "master-system",
+            name: "SEGA Mega Drive",
+            description: "Beschreibung",
+            price: 269.99,
+            image: "images/SEGA-mega-drive",
+            alt: "SEGA Mega Drive Bild"
         },
     ],
     
