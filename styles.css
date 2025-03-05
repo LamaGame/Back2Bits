@@ -49,6 +49,7 @@ header {
 header h1 {
     margin: 0;
     font-family: 'Press Start 2P', cursive;
+    font-size: 3rem;
     text-align: left; /* Align text to the left */
 }
 
