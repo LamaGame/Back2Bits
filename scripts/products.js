@@ -5,7 +5,7 @@ const productData = {
             id: "gameboy-classic",
             name: "Gameboy Classic",
             description: "Ein klassischer Handheld von Nintendo.",
-            price: 99,
+            price: 99.99,
             image: "images/Nintendo-gameboy-classic.png",
             alt: "Gameboy Bild"
         },
@@ -13,7 +13,7 @@ const productData = {
             id: "nes",
             name: "Nintendo Entertainment System",
             description: "Zustand: Wie Neu",
-            price: 120,
+            price: 399.99,
             image: "images/Nintendo-NES.png",
             alt: "NES Bild"
         },
