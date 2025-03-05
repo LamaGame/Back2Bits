@@ -74,13 +74,13 @@ header h1 {
 
 nav ul {
     list-style: none;
-    display: inline-flex;
-    flex-flow: row no-wrap;
+    display: inline-block;
 }
 
 nav ul li {
     display: inline-block;
     margin: 0 1rem;
+    white-space: nowrap;
 }
 
 nav ul li a {
