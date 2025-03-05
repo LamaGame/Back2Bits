@@ -276,15 +276,19 @@ footer {
     position: absolute;
     top: 80;
     right: 12px;
-    font-size: 36px;
+    font-size:20px;
+    padding: 12px 12px;
+    background-color: #00ff00;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
 }
 #open-btn {
     font-size:20px;
     padding: 12px 12px;
     background-color: #00ff00;
-    border-radius: 10px;
+    border-radius: 20px;
     color: white;
-    border: none;
     cursor: pointer;
     position: fixed;
     top: 80px;
