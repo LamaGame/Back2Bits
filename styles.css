@@ -248,7 +248,7 @@ footer {
 
 .sidebar {
     height: 100%;
-    max-width: 200px;
+    width: 200px;
     position: fixed;
     z-index: 2;
     top: 5rem;
@@ -257,7 +257,7 @@ footer {
     overflow-x: hidden;
     transition: 0.5s;
     text-align: center;
-    padding: 10px;
+    padding-top: 16px;
 }
 
 .sidebar a {
@@ -281,7 +281,7 @@ footer {
     width: 32px;
     height: 32px;
     text-align: center;
-    background-color: #00ff00;
+    background-color: #00cf00;
     border-radius: 0 0 15px 0;
     border: none;
     color: white;
@@ -291,9 +291,6 @@ footer {
 @media (max-width: 768px) {
     header nav {
         display: none;
-    }
-    .sidebar {
-        width: 120px;
     }
     .products-grid {
     	justify-content: center;    
