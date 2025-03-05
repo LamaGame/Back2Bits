@@ -84,18 +84,19 @@ nav ul li a {
 #products {
     padding: 3rem;
     padding-top: 6rem;
-    margin: 0 200px 0 250px;
+    margin: 0 200px 0 200px;
+    display: flex;
+    flex-direction: column;
 }
 
 #products {
-    display: flex;
-    flex-direction: column;
+    
 }
 
 .products-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 2rem;
+    gap: 1rem;
     justify-content: flex-start;
 }
 
