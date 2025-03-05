@@ -86,6 +86,14 @@ const productData = {
             price: 150,
             image: "images/atari-jaguar.png",
             alt: "Atari Jaguar Bild"
+        },
+        {
+            id: "Atari-lynx",
+            name: "Atari Lynx",
+            description: "Beschreibung.",
+            price: 150,
+            image: "images/Atari-lynx.png",
+            alt: "Atari Lynx Bild"
         }
     ]
 };
