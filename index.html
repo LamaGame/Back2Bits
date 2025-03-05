@@ -38,8 +38,8 @@
         <div class="product">
             <img src="images/Nintendo-gameboy-classic.png" alt="Gameboy Bild">
             <div>
-                <h3>Gameboy CLASSIC</h3>
-                <p>Zustand: Wie Neu</p>
+                <h3 class="name" id="gameboy-classic">Gameboy CLASSIC</h3>
+                <p class="description" id="gameboy-classic">Zustand: Wie Neu</p>
                 <p class="price">Preis: <strong><span id="gameboy-classic"></span>€</strong></p>
                 <button>In den Einkaufswagen</button>
             </div>
@@ -149,7 +149,11 @@
     updateCartCount();
 
     // Set product prices
+    document.querySelector(".name #gameboy-classic").innerText = itemPrices["gameboy-classic"]["name"];
+    document.querySelector(".description #gameboy-classic").innerText = itemPrices["gameboy-classic"]["description"];
     document.querySelector(".price #gameboy-classic").innerText = itemPrices["gameboy-classic"]["price"];
+    document.getElementById('price-product-2').innerText = itemPrices["Nintendo Entertainment System"]["name"];
+    document.getElementById('price-product-2').innerText = itemPrices["Nintendo Entertainment System"]["description"];
     document.getElementById('price-product-2').innerText = itemPrices["Nintendo Entertainment System"]["price"];
     document.getElementById('gamecube-lila').innerText = itemPrices["gamecube-lila"]["price"];
     document.getElementById('price-product-3').innerText = itemPrices["Produkt 3"]["price"];
