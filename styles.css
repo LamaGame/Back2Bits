@@ -249,6 +249,7 @@ footer {
 .sidebar {
     height: 100%;
     width: 200px;
+    max-width: 200px;
     position: fixed;
     z-index: 2;
     top: 80px;
@@ -283,16 +284,19 @@ footer {
     color: white;
     cursor: pointer;
 }
-#open-btn {
-    font-size:20px;
-    padding: 12px 12px;
-    background-color: #00ff00;
-    border-radius: 20px;
-    color: white;
-    cursor: pointer;
+#open-btn { 
     position: fixed;
     top: 80px;
-    left: 10px;
+    left: 0px
+    font-size: 3fr;
+    width: 32px;
+    height: 32px;
+    padding: 12px 12px;
+    background-color: #00ff00;
+    border-radius: 0 0 15px 0;
+    border: none;
+    color: white;
+    cursor: pointer;
 }
 @media (max-width: 768px) {
     header nav {
