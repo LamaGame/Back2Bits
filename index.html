@@ -149,14 +149,14 @@
     updateCartCount();
 
     // Set product prices
-    document.getElementById('gameboy-classic').innerText = itemPrices["gameboy-classic"]["price"];
-    document.getElementById('price-product-2').innerText = itemPrices["Nintendo Entertainment System"];
-    document.getElementById('price-product-3').innerText = itemPrices["Produkt 3"];
-    document.getElementById('price-product-4').innerText = itemPrices["Produkt 4"];
-    document.getElementById('price-product-5').innerText = itemPrices["Produkt 5"];
-    document.getElementById('price-product-6').innerText = itemPrices["Produkt 6"];
-    document.getElementById('price-product-7').innerText = itemPrices["Produkt 7"];
-    document.getElementById('price-product-8').innerText = itemPrices["Nintendo Switch"];
+    document.querySelector(".price #gameboy-classic").innerText = itemPrices["gameboy-classic"]["price"];
+    document.getElementById('price-product-2').innerText = itemPrices["Nintendo Entertainment System"]["price"];
+    document.getElementById('gamecube-lila').innerText = itemPrices["gamecube-lila"]["price"];
+    document.getElementById('price-product-3').innerText = itemPrices["Produkt 3"]["price"];
+    document.getElementById('price-product-4').innerText = itemPrices["Produkt 4"]["price"];
+    document.getElementById('price-product-5').innerText = itemPrices["Produkt 5"]["price"];
+    document.getElementById('price-product-6').innerText = itemPrices["Produkt 6"]["price"];
+    document.getElementById('price-product-7').innerText = itemPrices["Produkt 7"]["price"];
 
     function toggleSidebar() {
         const sidebar = document.getElementById('sidebar');
