@@ -40,39 +40,21 @@
 
 <script src="scripts/products.js"></script>
 <script>
-        function toggleSidebar() {
-    let sidebar = document.getElementById("sidebar");
-    let openBtn = document.getElementById("open-btn");
-
-    if (sidebar.style.left === "-200px") {
-        sidebar.style.left = "0"; // Open sidebar
-        openBtn.style.left = "200px"; // Hide open button
-    } else {
-        sidebar.style.left = "-200px"; // Close sidebar
-        openBtn.style.left = "0"; // Show open button
-    }
-}
-</script>
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
     // Load cart from localStorage or initialize empty
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
     function updateCartCount() {
-    document.getElementById('cart-count').textContent = cart.length;
-}
+        document.getElementById('cart-count').textContent = cart.length;
+    }
 
-function addToCart(category, id) {
-    cart.push([category, id]);
-    localStorage.setItem('cart', JSON.stringify(cart));
-
-    updateCartCount(); // Update cart count in UI
-
-    alert(`${productData[category][id].name} wurde zum Warenkorb hinzugefügt!`);
-}
-
-// Run updateCartCount on page load
-updateCartCount();}
+    function addToCart(category, id) {
+        cart.push([category, id]);
+        localStorage.setItem('cart', JSON.stringify(cart)); // Update cart in localStorage
+        updateCartCount();
+        
+        alert(`${productData[category][id].name} wurde zum Warenkorb hinzugefügt!`);
+    }
 
     // Listen for clicks on "Add to Cart" buttons inside products
     document.body.addEventListener('click', (event) => {
@@ -80,18 +62,23 @@ updateCartCount();}
             const productElement = event.target.closest('.product'); // Find closest product container
             if (!productElement) return;
 
-            const productId = productElement.id; // The ID of the product
-            const categoryElement = productElement.parentElement; // The parent category container
-            const productCategory = categoryElement.id; // The ID of the category
+            const productId = productElement.id; // Get product ID
+            const categoryElement = productElement.closest('section'); // Find the closest section
+            if (!categoryElement) return;
+
+            const productCategory = categoryElement.id; // Get category ID
 
             // Ensure product exists in productData before adding
-            if (productData[productCategory] && productData[productCategory][productId]) {
+            if (window.productData && productData[productCategory] && productData[productCategory][productId]) {
                 addToCart(productCategory, productId);
             } else {
                 alert('Produkt nicht gefunden.');
             }
         }
     });
+
+    // Run updateCartCount on page load
+    updateCartCount();
 });
 </script>
 </body>
