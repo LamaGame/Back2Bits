@@ -58,15 +58,21 @@
     // Load cart from localStorage or initialize empty
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-    function addToCart(category, id) {
-        // Add item to cart (category, id pair)
-        cart.push([category, id]);
+    function updateCartCount() {
+    document.getElementById('cart-count').textContent = cart.length;
+}
 
-        // Save updated cart to localStorage
-        localStorage.setItem('cart', JSON.stringify(cart));
+function addToCart(category, id) {
+    cart.push([category, id]);
+    localStorage.setItem('cart', JSON.stringify(cart));
 
-        alert(`${productData[category][id].name} wurde zum Warenkorb hinzugefügt!`);
-    }
+    updateCartCount(); // Update cart count in UI
+
+    alert(`${productData[category][id].name} wurde zum Warenkorb hinzugefügt!`);
+}
+
+// Run updateCartCount on page load
+updateCartCount();}
 
     // Listen for clicks on "Add to Cart" buttons inside products
     document.body.addEventListener('click', (event) => {
