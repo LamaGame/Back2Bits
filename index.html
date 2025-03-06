@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!productElement) return;
 
             const productId = productElement.id; // Get product ID
-            const categoryElement = productElement.closest('section'); // Find the closest section
+            const categoryElement = productElement.closest('.products-grid'); // Find the closest section
             if (!categoryElement) return;
 
             const productCategory = categoryElement.id; // Get category ID
@@ -75,6 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 alert('Produkt nicht gefunden.');
             }
         }
+        console.log(productCategory, productId);
     });
 
     // Run updateCartCount on page load
