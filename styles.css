@@ -129,7 +129,6 @@ nav ul li a {
     border-radius: 20px;
     margin-top: auto;
     margin-bottom: auto;
-    pointer-events: none;
 }
 
 .product h3 {
