@@ -67,7 +67,8 @@
             button.addEventListener('click', () => {
                 const product = button.parentElement.parentElement;
                 const productId = product.getAttribute('id');
-                cart.push(productId);
+                const productCategory = product.parentElement.getAttribute('id');
+                cart.push([productId,productCategory]);
                 localStorage.setItem('cart', JSON.stringify(cart));
                 updateCartCount();
             });
