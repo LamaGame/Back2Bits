@@ -93,6 +93,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Run updateCartCount on page load
     updateCartCount();
+
+    localStorage.removeItem('cart');
+    window.location.reload();
+    
 });
 </script>
 </body>
