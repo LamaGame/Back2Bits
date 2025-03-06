@@ -55,30 +55,38 @@
 </script>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        const cartIcon = document.getElementById('cart-icon');
-        const cartCount = document.getElementById('cart-count');
-        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    // Load cart from localStorage or initialize empty
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-        function updateCartCount() {
-            cartCount.innerText = cart.length;
+    function addToCart(category, id) {
+        // Add item to cart (category, id pair)
+        cart.push([category, id]);
+
+        // Save updated cart to localStorage
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        alert(`${productData[category][id].name} wurde zum Warenkorb hinzugefügt!`);
+    }
+
+    // Listen for clicks on "Add to Cart" buttons inside products
+    document.body.addEventListener('click', (event) => {
+        if (event.target.classList.contains('add-to-cart')) {
+            const productElement = event.target.closest('.product'); // Find closest product container
+            if (!productElement) return;
+
+            const productId = productElement.id; // The ID of the product
+            const categoryElement = productElement.parentElement; // The parent category container
+            const productCategory = categoryElement.id; // The ID of the category
+
+            // Ensure product exists in productData before adding
+            if (productData[productCategory] && productData[productCategory][productId]) {
+                addToCart(productCategory, productId);
+            } else {
+                alert('Produkt nicht gefunden.');
+            }
         }
-
-        document.querySelectorAll('.product button').forEach(button => {
-            button.addEventListener('click', () => {
-                const product = button.parentElement.parentElement;
-                const productId = product.getAttribute('id');
-                const productCategory = product.parentElement.getAttribute('id');
-                cart.push([productCategory, productId]);
-                localStorage.setItem('cart', JSON.stringify(cart));
-                updateCartCount();
-            });
-        });
-        
-        cartIcon.addEventListener('click', () => {
-            window.location.href = 'checkout.html';
-        });
-        updateCartCount();
     });
+});
 </script>
 </body>
 </html>
