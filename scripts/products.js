@@ -124,10 +124,12 @@ function generateProductLayout() {
             productDiv.id = productKey; // Set ID to the dictionary key
 
             // Create product image
+            const imgLink = document.createElement("a");
+            imgLink.href = `product.html?category=${category}&id=${productKey}`;
+
             const img = document.createElement("img");
             img.src = product.image;
             img.alt = product.alt;
-            img.href = `product.html?category=${category}&id=${productKey}`;
 
             // Create product details div
             const detailsDiv = document.createElement("div");
@@ -156,7 +158,8 @@ function generateProductLayout() {
             detailsDiv.appendChild(productPrice);
             detailsDiv.appendChild(button);
 
-            productDiv.appendChild(img);
+            imgLink.appendChild(img);
+            productDiv.appendChild(imgLink);
             productDiv.appendChild(detailsDiv);
             section.appendChild(productDiv);
         }
