@@ -120,6 +120,7 @@ function generateProductLayout() {
         // Create product section
         const section = document.createElement("section");
         section.classList.add("products-grid");
+        section.id = `${category}`;
 
         productData[category].forEach(product => {
             // Create product div
