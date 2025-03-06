@@ -1,32 +1,28 @@
 // Product data stored in an object
 const productData = {
-    "Nintendo": [
-        {
-            id: "gameboy-classic",
+    "Nintendo": {
+        "gameboy-classic": {
             name: "Gameboy Classic",
             description: "Ein klassischer Handheld von Nintendo.",
             price: 84.99,
             image: "images/Nintendo-gameboy-classic.png",
             alt: "Gameboy Classic Bild"
         },
-        {
-            id: "gameboy-color",
+        "gameboy-color": {
             name: "Gameboy Color",
             description: "Ein klassischer Handheld von Nintendo.",
             price: 149.99,
             image: "images/Nintendo-gameboy-color.png",
             alt: "Gameboy Color Bild"
         },
-        {
-            id: "nes",
+        "nes": {
             name: "Nintendo Entertainment System",
             description: "Beschreibung",
             price: 399.99,
             image: "images/Nintendo-NES.png",
             alt: "NES Bild"
         },
-        {
-            id: "gamecube",
+        "gamecube": {
             name: "Gamecube",
             description: "Beschreibung",
             price: 129.99,
