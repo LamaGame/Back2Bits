@@ -127,7 +127,7 @@ nav ul li a {
 .product img {
     width: 100%;
     height: auto;
-    max-height: 50%;
+    max-height: 13rem;
     object-fit: contain;
     margin-bottom: 1rem;
     border-radius: 20px;
