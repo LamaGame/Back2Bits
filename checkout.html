@@ -66,7 +66,6 @@
                 <div class="cart-controls">
                     <button class="increase">+</button>
                     <button class="decrease">-</button>
-                    <button class="remove">Entfernen</button>
                 </div>
             `;
             cartItemsList.appendChild(li);
@@ -89,14 +88,6 @@
                     delete itemCounts[key];
                     cartItems = cartItems.filter(item => !(item[0] === category && item[1] === id));
                 }
-                localStorage.setItem('cart', JSON.stringify(cartItems));
-                updateCart();
-            });
-
-            // Remove item completely
-            li.querySelector('.remove').addEventListener('click', () => {
-                delete itemCounts[key];
-                cartItems = cartItems.filter(item => !(item[0] === category && item[1] === id));
                 localStorage.setItem('cart', JSON.stringify(cartItems));
                 updateCart();
             });
