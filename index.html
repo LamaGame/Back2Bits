@@ -65,7 +65,7 @@
 
         document.querySelectorAll('.product button').forEach(button => {
             button.addEventListener('click', () => {
-                const product = button.parentElement;
+                const product = button.parentElement.parentElement;
                 const productId = product.getAttribute('data-id');
                 cart.push(productId);
                 localStorage.setItem('cart', JSON.stringify(cart));
