@@ -111,6 +111,7 @@ nav ul li a {
 }
 
 .products-grid {
+    padding: -2rem 0;
     display: flex;
     flex-flow: row wrap;
     gap: 1rem;
