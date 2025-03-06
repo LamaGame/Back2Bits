@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // 2. Get the product from productData
-    const product = window.productData?.[category]?.[productId];
+    const product = productData?.[category]?.[productId];
 
     if (!product) {
         document.getElementById("product-details").innerHTML = "<p>Produkt nicht gefunden.</p>";
