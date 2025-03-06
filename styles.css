@@ -92,6 +92,10 @@ nav ul li a {
     flex-direction: column;
 }
 
+#products a {
+    text-decoration: none;
+}
+
 .products-grid {
     display: flex;
     flex-wrap: wrap;
