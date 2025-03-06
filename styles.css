@@ -291,7 +291,7 @@ footer {
     width: 200px;
     position: fixed;
     z-index: 2;
-    top: 5rem;
+    top: 4rem;
     left: -200px;
     background-color: #1a1a1a;
     overflow-x: hidden;
