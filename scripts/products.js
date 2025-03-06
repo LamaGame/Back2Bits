@@ -1,5 +1,5 @@
 // Product data stored in an object
-const productData = {
+const window.productData = {
     "Nintendo": {
         "gameboy-classic": {
             name: "Gameboy Classic",
