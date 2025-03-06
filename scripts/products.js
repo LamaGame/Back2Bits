@@ -125,7 +125,7 @@ function generateProductLayout() {
 
             // Create product image
             const imgLink = document.createElement("a");
-            imgLink.href = `product.html?category=${category}&id=${productKey}`;
+            imgLink.href = `product-details.html?category=${category}&id=${productKey}`;
 
             const img = document.createElement("img");
             img.src = product.image;
