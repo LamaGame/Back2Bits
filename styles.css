@@ -166,11 +166,12 @@ nav ul li a {
 }
 
 #product-details {
-    margin: 15% 3rem 15% 7rem;
-    padding-inline: 50%;
+    margin-block: 3rem;
+    display: flex;
+    justify-content: center;
 }
 #product-details img {
-    width: 50%
+    max-width: 50%
     height: auto;
     fit-content: contain;
 }
