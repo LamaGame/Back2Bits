@@ -107,62 +107,63 @@ function generateProductLayout() {
     const container = document.getElementById("product-container");
 
     for (const category in productData) {
-        // Create category title
-        const categoryTitle = document.createElement("h2");
-        categoryTitle.id = `category-${category.toLowerCase()}`;
-        categoryTitle.textContent = category;
-        container.appendChild(categoryTitle);
+    // Create category title
+    const categoryTitle = document.createElement("h2");
+    categoryTitle.id = `category-${category.toLowerCase()}`;
+    categoryTitle.textContent = category;
+    container.appendChild(categoryTitle);
 
-        // Create product section
-        const section = document.createElement("section");
-        section.classList.add("products-grid");
-        section.id = `${category}`;
+    // Create product section
+    const section = document.createElement("section");
+    section.classList.add("products-grid");
+    section.id = category;
 
-        productData[category].forEach(product => {
-            // Create product div
-            const productDiv = document.createElement("div");
-            productDiv.classList.add("product");
-            productDiv.id = product.id;
+    for (const productKey in productData[category]) {
+        const product = productData[category][productKey]; // Get product object
 
-            // Create product image
-            const img = document.createElement("img");
-            img.src = product.image;
-            img.alt = product.alt;
+        // Create product div
+        const productDiv = document.createElement("div");
+        productDiv.classList.add("product");
+        productDiv.id = productKey; // Set ID to the dictionary key
 
-            // Create product details div
-            const detailsDiv = document.createElement("div");
+        // Create product image
+        const img = document.createElement("img");
+        img.src = product.image;
+        img.alt = product.alt;
 
-            // Product name
-            const productName = document.createElement("h3");
-            productName.textContent = product.name;
+        // Create product details div
+        const detailsDiv = document.createElement("div");
 
-            // Product description
-            const productDesc = document.createElement("p");
-            productDesc.textContent = product.description;
+        // Product name
+        const productName = document.createElement("h3");
+        productName.textContent = product.name;
 
-            // Product price
-            const productPrice = document.createElement("p");
-            productPrice.classList.add("price");
-            productPrice.innerHTML = `<strong>${product.price.toLocaleString("de-DE", { minimumFractionDigits: 2, maximumFractionDigits: 2 })} €</strong>`;
+        // Product description
+        const productDesc = document.createElement("p");
+        productDesc.textContent = product.description;
 
-            // Buy button
-            const button = document.createElement("button");
-            button.textContent = "In den Warenkorb";
+        // Product price
+        const productPrice = document.createElement("p");
+        productPrice.classList.add("price");
+        productPrice.innerHTML = `<strong>${product.price.toLocaleString("de-DE", { minimumFractionDigits: 2, maximumFractionDigits: 2 })} €</strong>`;
 
-            // Append elements
-            detailsDiv.appendChild(productName);
-            detailsDiv.appendChild(productDesc);
-            detailsDiv.appendChild(productPrice);
-            detailsDiv.appendChild(button);
+        // Buy button
+        const button = document.createElement("button");
+        button.textContent = "In den Warenkorb";
 
-            productDiv.appendChild(img);
-            productDiv.appendChild(detailsDiv);
-            section.appendChild(productDiv);
-        });
+        // Append elements
+        detailsDiv.appendChild(productName);
+        detailsDiv.appendChild(productDesc);
+        detailsDiv.appendChild(productPrice);
+        detailsDiv.appendChild(button);
 
-        // Append section to the container
-        container.appendChild(section);
+        productDiv.appendChild(img);
+        productDiv.appendChild(detailsDiv);
+        section.appendChild(productDiv);
     }
+
+    container.appendChild(section);
+}
 }
 
 // Run function on page load
