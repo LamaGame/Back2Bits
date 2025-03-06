@@ -68,7 +68,7 @@
                 const product = button.parentElement.parentElement;
                 const productId = product.getAttribute('id');
                 const productCategory = product.parentElement.getAttribute('id');
-                cart.push([productId,productCategory]);
+                cart.push([productCategory, productId]);
                 localStorage.setItem('cart', JSON.stringify(cart));
                 updateCartCount();
             });
