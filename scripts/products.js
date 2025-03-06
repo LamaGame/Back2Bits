@@ -37,9 +37,9 @@ const productData = {
             image: "images/Nintendo-virtual-boy.png",
             alt: "Virtual Boy Bild"
         },
-    ],
+    },
     
-    "Sega": [
+    "Sega": {
         {
             id: "master-system",
             name: "SEGA Master System",
@@ -72,9 +72,9 @@ const productData = {
             image: "images/SEGA-nomad.png",
             alt: "SEGA Nomad Bild"
         }
-    ],
+    },
     
-    "Atari": [
+    "Atari": {
         {
             id: "atari-2600",
             name: "Atari 2600",
@@ -99,7 +99,7 @@ const productData = {
             image: "images/Atari-lynx.png",
             alt: "Atari Lynx Bild"
         }
-    ]
+    }
 };
 
 // Function to generate the product layout dynamically
