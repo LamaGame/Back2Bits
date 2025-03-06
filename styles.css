@@ -141,7 +141,7 @@ nav ul li a {
     width: 100%;
     height: auto;
     max-height: 13rem;
-    margin-block: 50%;
+    justify-self: center;
     object-fit: contain;
     border-radius: 20px;
 }
