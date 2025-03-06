@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('cart', JSON.stringify(cart)); // Update cart in localStorage
         updateCartCount();
         
-        alert(`${window.productData[category][id].name} wurde zum Warenkorb hinzugefügt!`);
+        alert(`${productData[category][id].name} wurde zum Warenkorb hinzugefügt!`);
     }
 
     // Listen for clicks on "Add to Cart" buttons inside products
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const productCategory = categoryElement.id; // Get category ID
 
             // Ensure product exists in productData before adding
-            if (window.productData && window.productData[productCategory] && window.productData[productCategory][productId]) {
+            if (productData && productData[productCategory] && productData[productCategory][productId]) {
                 addToCart(productCategory, productId);
             } else {
                 alert('Produkt nicht gefunden. `${productCategory}/`${productId}');
