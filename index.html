@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (productData && productData[productCategory] && productData[productCategory][productId]) {
                 addToCart(productCategory, productId);
             } else {
-                alert('Produkt nicht gefunden. `${productCategory}/`${productId}');
+                alert(`Produkt nicht gefunden. ${productCategory}/${productId}`);
             }
         }
     });
