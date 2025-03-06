@@ -96,7 +96,7 @@ const productData = {
             alt: "Atari Jaguar Bild"
         },
         {
-            id: "Atari-lynx",
+            id: "atari-lynx",
             name: "Atari Lynx",
             description: "Beschreibung.",
             price: 219.99,
@@ -119,13 +119,13 @@ function generateProductLayout() {
 
         // Create product section
         const section = document.createElement("section");
-        section.id = `products-category-${category.toLowerCase()}`;
         section.classList.add("products-grid");
 
         productData[category].forEach(product => {
             // Create product div
             const productDiv = document.createElement("div");
             productDiv.classList.add("product");
+            productDiv.id = product.id;
 
             // Create product image
             const img = document.createElement("img");
