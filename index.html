@@ -40,6 +40,20 @@
 
 <script src="scripts/products.js"></script>
 <script>
+    function toggleSidebar() {
+    let sidebar = document.getElementById("sidebar");
+    let openBtn = document.getElementById("open-btn");
+
+    if (sidebar.style.left === "" || sidebar.style.left === "-200px") {
+        sidebar.style.left = "0"; 
+        openBtn.style.left = "200px";
+    } else {
+        sidebar.style.left = "-200px"; 
+        openBtn.style.left = "0";
+    }
+}
+</script>
+<script>
 document.addEventListener('DOMContentLoaded', () => {
     // Load cart from localStorage or initialize empty
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
