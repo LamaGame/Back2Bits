@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('cart', JSON.stringify(cart)); // Update cart in localStorage
         updateCartCount();
         
-        alert(`${productData[category][id].name} wurde zum Warenkorb hinzugefügt!`);
+        alert(`${window.productData[category][id].name} wurde zum Warenkorb hinzugefügt!`);
     }
 
     // Listen for clicks on "Add to Cart" buttons inside products
@@ -77,19 +77,18 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!productElement) return;
 
             const productId = productElement.id; // Get product ID
-            const categoryElement = productElement.closest('.products-grid'); // Find the closest section
+            const categoryElement = productElement.parentElement; // Find the closest section
             if (!categoryElement) return;
 
             const productCategory = categoryElement.id; // Get category ID
 
             // Ensure product exists in productData before adding
-            if (window.productData && productData[productCategory] && productData[productCategory][productId]) {
+            if (window.productData && window.productData[productCategory] && window.productData[productCategory][productId]) {
                 addToCart(productCategory, productId);
             } else {
                 alert('Produkt nicht gefunden.');
             }
         }
-        console.log(productCategory, productId);
     });
 
     // Run updateCartCount on page load
