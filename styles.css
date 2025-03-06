@@ -292,7 +292,7 @@ footer {
     width: 200px;
     position: fixed;
     z-index: 2;
-    top: 1.5rem;
+    top: 4rem;
     left: -200px;
     background-color: #1a1a1a;
     overflow-x: hidden;
@@ -316,7 +316,7 @@ footer {
 
 #open-btn {
     position: fixed;
-    top: 5rem;
+    top: 4rem;
     left: 0px;
     font-size: 32px;
     width: 50px;
