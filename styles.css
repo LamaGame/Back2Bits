@@ -21,9 +21,10 @@ body {
 }
 
 main {
-    margin-block: 4rem;
+    margin-block: 2rem;
     align-self: center;
     width: 90%;
+    margin-inline: auto;
 }
 /* Buttons */
 button {
@@ -315,7 +316,12 @@ footer {
 
 .back-to-main {
     text-decoration: none;
+    background-color: #00ff00;
+    color: #ffffff;
     transition: 0.3s;
+    border-radius: 20px;
+    padding: 5px;
+    width: min-content;
 }
 
 /* Sidebar */
