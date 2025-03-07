@@ -111,6 +111,10 @@ nav ul li a {
     flex-direction: column;
 }
 
+#products h2 {
+    padding-left: 4rem;
+}
+
 .products-grid {
     padding: 0;
     display: flex;
