@@ -22,6 +22,7 @@ body {
 
 main {
     margin-block: 4rem;
+    justify-self: center;
 }
 /* Buttons */
 button {
