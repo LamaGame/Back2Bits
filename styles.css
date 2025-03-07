@@ -174,14 +174,15 @@ nav ul li a {
 
 /* Product Details Page */
 #product-title {
-    margin-bottom: 2rem;
+    margin-top: 0rem;
+    align-items: center;
     top: -1.4rem;
 }
 
 #product-details {
     display: flex;
     flex-direction: column;
-    padding-top: 3rem;
+    margin-top: 5rem;
     align-items: center;
     text-align: center;
 }
