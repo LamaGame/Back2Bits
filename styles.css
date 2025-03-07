@@ -21,7 +21,7 @@ body {
 }
 
 main {
-    margin-top: 3rem;
+    margin-block: 4rem;
 }
 /* Buttons */
 button {
@@ -152,6 +152,7 @@ nav ul li a {
     height: auto;
     max-height: 50%;
     align-self: center;
+    align-items: center;
 }
 
 .product img {
@@ -192,7 +193,7 @@ nav ul li a {
 #product-details {
     display: flex;
     flex-direction: column;
-    margin-inline: 3rem;
+    padding-inline: 4rem;
     align-items: center;
     text-align: center;
 }
@@ -203,17 +204,17 @@ nav ul li a {
     align-items: center;
     background-color: #1a1a1a;
     padding: 2rem;
-    margin: 0 4rem 0 2rem;
+    margin-block: 2rem;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    max-width: 800px;
+    max-width: 80%;
     width: fit-content;
 }
 
 #product-image {
     object-fit: contain;
     max-width: 100%;
-    height: 50vh;
+    height: 50%;
     border-radius: 10px;
     pointer-events: none;
 }
