@@ -213,8 +213,8 @@ nav ul li a {
 
 /* 🛒 Checkout Page */
 #checkout-page {
-    padding: 3rem;
-    margin-inline: 15%;
+    padding: 2rem;
+    margin-inline: 10%;
 }
 
 #checkout-page h2 {
@@ -235,6 +235,7 @@ nav ul li a {
     margin-bottom: 1rem;
     display: flex;
     justify-content: space-between;
+    width: 100%;
     align-items: center;
 }
 
@@ -302,7 +303,7 @@ footer {
     padding-top: 16px;
 }
 
-.sidebar a {
+.sidebar a, .back-to-main {
     padding-block: 8px;
     text-decoration: none;
     display: block;
