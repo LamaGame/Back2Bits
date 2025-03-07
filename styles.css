@@ -20,6 +20,9 @@ body {
     color: #f4f4f4;
 }
 
+main {
+    margin-top: 3rem;
+}
 /* Buttons */
 button {
     transition: transform 0.2s ease-out;
@@ -63,6 +66,7 @@ header h1 {
     font-family: 'Press Start 2P', cursive;
     font-size: max(min(2vw, 2rem), 1.4rem);
     text-align: left;
+    align-self: center;
     line-height: 1.4;
 }
 
@@ -188,7 +192,7 @@ nav ul li a {
 #product-details {
     display: flex;
     flex-direction: column;
-    margin-top: 5rem;
+    margin-inline: 3rem;
     align-items: center;
     text-align: center;
 }
