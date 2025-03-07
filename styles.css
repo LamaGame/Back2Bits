@@ -119,11 +119,12 @@ nav ul li a {
 }
 
 #products h2 {
-    padding-left: 4rem;
+    font-family: 'Press Start 2P';
 }
 
 .products-grid {
     padding: 0;
+    margin-bottom: 1rem;
     display: flex;
     flex-flow: row wrap;
     gap: 1rem;
@@ -195,7 +196,7 @@ nav ul li a {
 #product-details {
     display: flex;
     flex-direction: column;
-    padding-inline: 4rem;
+    padding-top: 4rem;
     align-items: center;
     text-align: center;
 }
@@ -206,10 +207,9 @@ nav ul li a {
     align-items: center;
     background-color: #1a1a1a;
     padding: 2rem;
-    margin-block: 2rem;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    max-width: 80%;
+    max-width: 90%;
     width: fit-content;
     height: auto;
     max-height: 100vh;
@@ -317,9 +317,9 @@ footer {
 .back-to-main {
     text-decoration: none;
     background-color: #00ff00;
-    color: #ffffff;
+    color: #1a1a1a;
     transition: 0.3s;
-    border-radius: 20px;
+    border-radius: 10px;
     padding: 5px;
     width: min-content;
 }
