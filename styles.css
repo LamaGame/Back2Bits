@@ -199,6 +199,8 @@ nav ul li a {
     padding-top: 4rem;
     align-items: center;
     text-align: center;
+    max-height: 100vh;
+    
 }
 
 .product-info {
@@ -212,7 +214,6 @@ nav ul li a {
     max-width: 90%;
     width: fit-content;
     height: auto;
-    max-height: 100vh;
 }
 
 #product-image {
