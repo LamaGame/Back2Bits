@@ -152,8 +152,7 @@ nav ul li a {
     width: 100%;
     height: auto;
     max-height: 50%;
-    align-self: center;
-    align-items: center;
+    justify-self: center;
 }
 
 .product img {
@@ -162,6 +161,7 @@ nav ul li a {
     max-height: 100%;
     object-fit: contain;
     border-radius: 20px;
+    justify-self: center;
 }
 
 .product .description {
@@ -210,6 +210,8 @@ nav ul li a {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     max-width: 80%;
     width: fit-content;
+    height: auto;
+    max-height: 100vh;
 }
 
 #product-image {
