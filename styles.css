@@ -140,9 +140,9 @@ nav ul li a {
 }
 
 .product img, .product a {
-    width: 100%;
+    width: auto;
     height: auto;
-    max-height: 13rem;
+    max-height: 12rem;
     justify-self: center;
     object-fit: contain;
     border-radius: 20px;
