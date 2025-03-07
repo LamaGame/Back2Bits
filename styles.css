@@ -51,7 +51,7 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    height: 1.5rem;
+    height: 1.8rem;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
@@ -73,7 +73,7 @@ header h1 {
 #cart-icon {
     position: relative;
     font-size: 2rem;
-    right: 3rem;
+    right: 10vw;
     color: #00ff00;
     cursor: pointer;
     text-decoration: none;
@@ -109,7 +109,7 @@ nav ul li a {
 
 /* Products Grid */
 #products {
-    padding: 3rem;
+    padding-block: 3rem;
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -309,6 +309,11 @@ footer {
     font-family: 'Press Start 2P', cursive;
 }
 
+.back-to-main {
+    text-decoration: none;
+    transition: 0.3s;
+}
+
 /* Sidebar */
 .sidebar {
     height: 100%;
@@ -324,7 +329,7 @@ footer {
     padding-top: 16px;
 }
 
-.sidebar a, .back-to-main {
+.sidebar a {
     padding-block: 8px;
     text-decoration: none;
     display: block;
