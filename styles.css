@@ -242,6 +242,8 @@ nav ul li a {
     padding: 2rem;
     margin-inline: 10%;
     justify-content: space-between;
+    height: fit-content;
+    margin-bottom: 2rem;
 }
 
 #checkout-page h2 {
@@ -250,7 +252,7 @@ nav ul li a {
 
 #cart-items {
     list-style: none;
-    padding: 0 2rem;
+    padding: 0 1rem;
 }
 
 #cart-items li {
@@ -309,6 +311,7 @@ footer {
     text-align: center;
     justify-content: center;
     padding: 2rem 1rem;
+    margin-top: 2rem;
     position: relative;
     bottom: 0;
     width: 100%;
@@ -316,6 +319,7 @@ footer {
 }
 
 .back-to-main {
+    font-family: 'Press Start 2P';
     text-decoration: none;
     background-color: #00ff00;
     color: #1a1a1a;
@@ -359,7 +363,7 @@ footer {
 
 #open-btn {
     position: fixed;
-    padding: 5px;
+    padding: 15px;
     top: 3.9rem;
     left: 0px;
     font-size: 36px;
