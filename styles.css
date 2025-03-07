@@ -322,12 +322,13 @@ footer {
 
 .back-to-main {
     font-family: 'Press Start 2P';
+    font-size: 80%;
     text-decoration: none;
     background-color: #00ff00;
     color: #1a1a1a;
     transition: 0.3s;
-    border-radius: 10px;
-    padding: 5px;
+    border-radius: 5px;
+    padding: 10px;
     width: min-content;
 }
 
