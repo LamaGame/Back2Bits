@@ -135,6 +135,7 @@ nav ul li a {
     display: flex;
     flex-flow: column nowrap;
     background-color: #1a1a1a;
+    background-image: url('images/gradient-0.png') no-repeat 0 0;
     line-height: 1.4rem;
     border-radius: 30px;
     width: 18rem;
