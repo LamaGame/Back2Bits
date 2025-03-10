@@ -250,6 +250,52 @@ nav ul li a {
     font-size: 1rem;
 }
 
+.quality-switch {
+    display: flex;
+    position: relative;
+    width: 320px;
+    background: #333;
+    border-radius: 50px;
+    padding: 5px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.quality-switch input {
+    display: none;
+}
+
+.quality-option {
+    flex: 1;
+    text-align: center;
+    padding: 10px 0;
+    cursor: pointer;
+    font-size: 1rem;
+    position: relative;
+    z-index: 2;
+    color: #f4f4f4;
+    font-weight: bold;
+}
+
+.quality-slider {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: calc(100% / 3 - 10px);
+    height: calc(100% - 10px);
+    background: #00ff00;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+#q2:checked ~ .quality-slider {
+    left: calc(100% / 3 + 5px);
+}
+
+#q3:checked ~ .quality-slider {
+    left: calc(2 * (100% / 3) + 5px);
+}
+
 /* 🛒 Checkout Page */
 #checkout-page {
     padding: 2rem;
