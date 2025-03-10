@@ -107,6 +107,7 @@ function generateProductLayout() {
         // Create category title
         const categoryTitle = document.createElement("h2");
         categoryTitle.id = `category-${category.toLowerCase()}`;
+        categoryTitle.classList.add("category");
         categoryTitle.textContent = category;
         container.appendChild(categoryTitle);
 
