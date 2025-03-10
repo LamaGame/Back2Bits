@@ -17,7 +17,7 @@
         </ul>
     </nav>
     <input id="searchbar" onkeyup="search_products()" onblur="document.getElementById('searchbar').style.display = 'none'; document.getElementById('search-icon').style.display = 'inline'" type="text" name="search" placeholder="Search Products.." style="display: none;" autofocus>
-    <button id="search-icon" onclick="document.getElementById('searchbar').style.display = 'inline'; document.getElementById('search-icon').style.display = 'none';">🔎</button>
+    <button id="search-icon" onclick="document.getElementById('searchbar').style.display = 'inline'; document.getElementById('search-icon').style.display = 'none'; document.getElementById('searchbar').focus();">🔎</button>
     <a id="cart-icon" href="./checkout.html">🛒<span id="cart-count">0</span></a>
 </header>
 
