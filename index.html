@@ -52,11 +52,11 @@ function search_products() {
     for (i = 0; i < x.length; i++) {
         if (!x[i].innerHTML.toLowerCase().includes(input)) {
             x[i].style.display = "none";
-            x[i].parentElement.closest('h2').style.display = "none";
+            x[i].closest('.category').style.display = "none";
         }
         else {
             x[i].style.display = "flex";
-            x[i].parentElement.closest('h2').style.display = "flex";
+            x[i].closest('.category').style.display = "relative";
         }
     }
 }
