@@ -197,10 +197,9 @@ nav ul li a {
 #product-details {
     display: flex;
     flex-direction: column;
-    padding-top: 4rem;
-    align-items: center;
+    padding-block: 4rem;
+    justify-content: center;
     text-align: center;
-    max-height: 100vh;
     
 }
 
@@ -213,9 +212,8 @@ nav ul li a {
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     max-width: 90%;
-    max-height: 100vh;
+    height: 100vh;
     width: fit-content;
-    height: auto;
 }
 
 #product-image {
@@ -367,7 +365,7 @@ footer {
 
 #open-btn {
     position: fixed;
-    padding: 15px;
+    padding: 0;
     top: 3.9rem;
     left: 0px;
     font-size: 36px;
@@ -375,6 +373,7 @@ footer {
     height: 50px;
     text-align: center;
     align-items: center;
+    justify-content: center;
     background-color: #1a1a1a;
     border-radius: 0 0 15px 0;
     border: none;
