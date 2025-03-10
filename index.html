@@ -52,9 +52,11 @@ function search_products() {
     for (i = 0; i < x.length; i++) {
         if (!x[i].innerHTML.toLowerCase().includes(input)) {
             x[i].style.display = "none";
+            x[i].parentElement.style.display = "none";
         }
         else {
             x[i].style.display = "flex";
+            x[i].parentElement.style.display = "flex";
         }
     }
 }
