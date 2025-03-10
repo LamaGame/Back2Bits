@@ -54,7 +54,7 @@ function search_products() {
             x[i].style.display = "none";
         }
         else {
-            x[i].style.display = "inline-block";
+            x[i].style.display = "flex";
         }
     }
 }
@@ -88,7 +88,10 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('cart', JSON.stringify(cart)); // Update cart in localStorage
         updateCartCount();
         
-        alert(`${productData[category][id].name} wurde zum Warenkorb hinzugefügt!`);
+        document.getElementById('cart-icon').style.scale = '1.05';
+        setTimeout(function() {
+            document.getElementById('cart-icon').style.scale = '1.0';
+        }, 100);
     }
 
     // Listen for clicks on "Add to Cart" buttons inside products
