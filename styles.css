@@ -214,8 +214,9 @@ nav ul li a {
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     max-width: 80%;
-    height: 100vh;
+    max-height: 100vh;
     width: fit-content;
+    height: fit-content;
 }
 
 #product-image {
@@ -251,6 +252,7 @@ nav ul li a {
 
 #checkout-page h2 {
     font-family: 'Press Start 2P', cursive;
+    padding-bottom: 3rem;
 }
 
 #cart-items {
