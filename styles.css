@@ -119,6 +119,7 @@ nav ul li a {
 
 /* Products Grid */
 #products {
+    top: 2rem;
     padding-block: 3rem;
     margin: 0;
     display: flex;
@@ -204,7 +205,7 @@ nav ul li a {
 #product-details {
     display: flex;
     flex-direction: column;
-    padding-block: 4rem;
+    padding: 4rem 0 2rem 0;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -255,6 +256,7 @@ nav ul li a {
     margin-inline: 10vw;
     justify-content: space-between;
     height: fit-content;
+    top: 2rem;
     bottom: 4rem;
     padding-bottom: 6rem;
 }
