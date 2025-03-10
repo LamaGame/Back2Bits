@@ -16,8 +16,8 @@
             <li><a href="#">Kontakt</a></li>
         </ul>
     </nav>
-    <input id="searchbar" onkeyup="search_products()" onblur="document.getElementById('searchbar').style.display = 'none'; document.getElementById('search-icon').style.display = 'inline'" type="text" name="search" placeholder="Search Products.." style="display: none;" autofocus>
-    <button id="search-icon" onclick="document.getElementById('searchbar').style.display = 'inline'; document.getElementById('search-icon').style.display = 'none'; document.getElementById('searchbar').focus();">🔎</button>
+    <input id="searchbar" onkeyup="search_products()" onblur="document.getElementById('searchbar').style.display = 'none'; document.getElementById('search-icon').style.display = 'inline'; document.getElementByClassName('category').style.display = 'relative';" type="text" name="search" placeholder="Search Products.." style="display: none;">
+    <button id="search-icon" onclick="document.getElementById('searchbar').style.display = 'inline'; document.getElementById('search-icon').style.display = 'none'; document.getElementById('searchbar').focus(); document.getElementByClassName('category').style.display = 'none';">🔎</button>
     <a id="cart-icon" href="./checkout.html">🛒<span id="cart-count">0</span></a>
 </header>
 
@@ -52,11 +52,9 @@ function search_products() {
     for (i = 0; i < x.length; i++) {
         if (!x[i].innerHTML.toLowerCase().includes(input)) {
             x[i].style.display = "none";
-            x[i].closest('.category').style.display = "none";
         }
         else {
             x[i].style.display = "flex";
-            x[i].closest('.category').style.display = "relative";
         }
     }
 }
