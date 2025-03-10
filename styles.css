@@ -76,7 +76,7 @@ header h1 {
 #cart-icon {
     position: relative;
     font-size: 2rem;
-    right: 10vw;
+    right: 7vw;
     color: #00ff00;
     cursor: pointer;
     text-decoration: none;
@@ -199,6 +199,7 @@ nav ul li a {
     flex-direction: column;
     padding-block: 4rem;
     justify-content: center;
+    align-items: center;
     text-align: center;
     
 }
@@ -207,13 +208,14 @@ nav ul li a {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     background-color: #1a1a1a;
     padding: 2rem;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     max-width: 80%;
     height: 100vh;
-    width: max-content;
+    width: fit-content;
 }
 
 #product-image {
@@ -241,7 +243,7 @@ nav ul li a {
 /* 🛒 Checkout Page */
 #checkout-page {
     padding: 2rem;
-    margin-inline: 10%;
+    margin-inline: 10vw;
     justify-content: space-between;
     height: fit-content;
     bottom: 4rem;
