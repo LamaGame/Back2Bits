@@ -76,8 +76,8 @@ header h1 {
 #searchbar {
     color: #1a1a1a;
     border: none;
-    border-radius: 20px;
-    height: 1.5rem;
+    border-radius: 5px;
+    height: 2.5rem;
 }
 
 #cart-icon {
