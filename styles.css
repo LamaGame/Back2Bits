@@ -248,11 +248,11 @@ nav ul li a {
     justify-content: space-between;
     height: fit-content;
     bottom: 4rem;
+    padding-bottom: 3rem;
 }
 
 #checkout-page h2 {
     font-family: 'Press Start 2P', cursive;
-    padding-bottom: 3rem;
 }
 
 #cart-items {
