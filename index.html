@@ -16,7 +16,7 @@
             <li><a href="#">Kontakt</a></li>
         </ul>
     </nav>
-    <input id="searchbar" onkeyup="search_products()" onblur="document.getElementById('searchbar').style.display = 'none'; document.getElementById('search-icon').style.display = 'inline'; document.getElementByClassName('category').style.display = 'relative';" type="text" name="search" placeholder="Search Products.." style="display: none;">
+    <input id="searchbar" onkeyup="search_products()" onblur="document.getElementById('searchbar').style.display = 'none'; document.getElementById('search-icon').style.display = 'inline'; document.getElementByClassName('category-Title').style.display = 'relative';" type="text" name="search" placeholder="Search Products.." style="display: none;">
     <button id="search-icon" onclick="document.getElementById('searchbar').style.display = 'inline'; document.getElementById('search-icon').style.display = 'none'; document.getElementById('searchbar').focus(); document.getElementByClassName('category').style.display = 'none';">🔎</button>
     <a id="cart-icon" href="./checkout.html">🛒<span id="cart-count">0</span></a>
 </header>
