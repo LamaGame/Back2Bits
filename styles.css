@@ -54,12 +54,12 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    height: 2rem;
+    max-height: 6rem;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 7vw 1rem 2rem;
+    padding: 2rem;
     z-index: 3;
     margin-bottom: 2rem;
 }
@@ -73,10 +73,16 @@ header h1 {
     line-height: 1.3;
 }
 
+#searchbar {
+    color: #1a1a1a;
+    border: none;
+    border-radius: 20px;
+}
+
 #cart-icon {
     position: relative;
     font-size: 2rem;
-    right: 7vw;
+    right: 4vw;
     color: #00ff00;
     cursor: pointer;
     text-decoration: none;
