@@ -1,4 +1,4 @@
-// Product data stored in an object
+// productData.js - Product data stored separately for modularity
 const productData = {
     "Nintendo": {
         "gameboy-classic": {
@@ -107,7 +107,7 @@ function generateProductLayout() {
         // Create category title
         const categoryTitle = document.createElement("h2");
         categoryTitle.id = `category-${category.toLowerCase()}`;
-        categoryTitle.classList.add("category-Title");
+        categoryTitle.classList.add("category-title");
         categoryTitle.textContent = category;
         container.appendChild(categoryTitle);
 
@@ -122,7 +122,7 @@ function generateProductLayout() {
             // Create product div
             const productDiv = document.createElement("div");
             productDiv.classList.add("product");
-            productDiv.id = productKey; // Set ID to the dictionary key
+            productDiv.id = productKey;
 
             // Create product image
             const imgLink = document.createElement("a");
@@ -151,7 +151,9 @@ function generateProductLayout() {
             // Buy button
             const button = document.createElement("button");
             button.textContent = "In den Warenkorb";
-            button.classList.add("add-to-cart"); // Add class for event handling
+            button.classList.add("add-to-cart");
+            button.dataset.category = category;
+            button.dataset.product = productKey;
 
             // Append elements
             detailsDiv.appendChild(productName);
