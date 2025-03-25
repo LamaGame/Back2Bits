@@ -33,6 +33,7 @@ function addToCart(event) {
         localStorage.setItem("cart", JSON.stringify(cart));
 
         alert(`${product.name} wurde zum Warenkorb hinzugefügt!`);
+        updateCart();
     } catch (error) {
         console.error("Error adding to cart:", error.message);
         alert("Ein Fehler ist aufgetreten. Der Warenkorb wird geleert.");
@@ -43,34 +44,79 @@ function addToCart(event) {
 // Function to clear the cart
 function clearCart() {
     localStorage.removeItem("cart");
-    displayCart();
+    updateCart();
 }
 
-// Function to display cart items
-function displayCart() {
+// Function to display and update cart items
+function updateCart() {
     const cartContainer = document.getElementById("cart-container");
-    if (!cartContainer) return;
+    const cartItemsList = document.getElementById("cart-items");
+    const cartItemCount = document.getElementById("cart-item-count");
+    const totalPriceElement = document.getElementById("total-price");
+
+    if (!cartContainer || !cartItemsList || !cartItemCount || !totalPriceElement) return;
 
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-    cartContainer.innerHTML = ""; // Clear previous content
+    cartItemsList.innerHTML = ""; // Clear previous content
+    let totalPrice = 0;
 
     if (cart.length === 0) {
-        cartContainer.innerHTML = "<p>Der Warenkorb ist leer.</p>";
+        cartItemsList.innerHTML = "<li>Dein Warenkorb ist leer</li>";
+        cartItemCount.innerText = "Produkte: 0";
+        totalPriceElement.innerText = "Summe: 0.00€";
         return;
     }
 
     cart.forEach(item => {
-        const div = document.createElement("div");
-        div.classList.add("cart-item");
+        const li = document.createElement("li");
+        li.classList.add("cart-item");
 
-        div.innerHTML = `
-            <img src="${item.image}" alt="${item.name}" width="50">
-            <p>${item.name} - ${item.quantity}x - ${(item.price * item.quantity).toLocaleString("de-DE", { minimumFractionDigits: 2 })} €</p>
+        li.innerHTML = `
+            <div class="cart-item-details">
+                <img src="${item.image}" alt="${item.name} Bild">
+                <span>${item.name}</span>
+            </div>
+            <div class="cart-item-amount">
+                <span><strong>${item.price.toFixed(2)}€ x${item.quantity}</strong></span>
+            </div>
+            <div class="cart-controls">
+                <button class="increase" data-id="${item.id}" data-category="${item.category}">+</button>
+                <button class="decrease" data-id="${item.id}" data-category="${item.category}">-</button>
+            </div>
         `;
+        cartItemsList.appendChild(li);
 
-        cartContainer.appendChild(div);
+        totalPrice += item.price * item.quantity;
     });
+
+    cartItemCount.innerText = `Produkte: ${cart.reduce((sum, item) => sum + item.quantity, 0)}`;
+    totalPriceElement.innerText = `Summe: ${totalPrice.toFixed(2)}€`;
+
+    // Event listeners for cart controls
+    document.querySelectorAll(".increase").forEach(button => {
+        button.addEventListener("click", () => changeQuantity(button.dataset.category, button.dataset.id, 1));
+    });
+
+    document.querySelectorAll(".decrease").forEach(button => {
+        button.addEventListener("click", () => changeQuantity(button.dataset.category, button.dataset.id, -1));
+    });
+}
+
+// Function to change product quantity in the cart
+function changeQuantity(category, productKey, change) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    const product = cart.find(item => item.id === productKey);
+    if (!product) return;
+
+    product.quantity += change;
+    if (product.quantity <= 0) {
+        cart = cart.filter(item => item.id !== productKey);
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    updateCart();
 }
 
 // Function to handle checkout process
@@ -92,13 +138,20 @@ function handleCheckout() {
     }
 }
 
-// Event listener for add-to-cart buttons
+// Event listeners
 document.addEventListener("DOMContentLoaded", () => {
     document.addEventListener("click", addToCart);
-    displayCart();
+    updateCart();
 
     const checkoutButton = document.getElementById("checkout-button");
     if (checkoutButton) {
         checkoutButton.addEventListener("click", handleCheckout);
+    }
+
+    const backButton = document.getElementById("back-button");
+    if (backButton) {
+        backButton.addEventListener("click", () => {
+            window.location.href = "index.html";
+        });
     }
 });
