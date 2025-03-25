@@ -21,7 +21,7 @@ body {
 }
 
 main {
-    margin-block: 2rem;
+    margin: 3rem 0 3rem 0;
     justify-self: center;
     width: 90%;
     margin-inline: auto;
@@ -75,8 +75,7 @@ header h1 {
 
 #searchbar {
     color: #1a1a1a;
-    border: none;
-    border-radius: 5px;
+    border: 2px solid orange;
     height: 2.5rem;
 }
 
