@@ -9,15 +9,15 @@
 </head>
 <body>
 <header>
-    <h1> Willkommen bei <br><span style="color: #327dc8;">Back2Bits</span></h1>
+    <h1>Willkommen bei <br><span style="color: #327dc8;">Back2Bits</span></h1>
     <nav>
         <ul>
             <li><a href="#">Über uns</a></li>
             <li><a href="#">Kontakt</a></li>
         </ul>
     </nav>
-    <input id="searchbar" onkeyup="search_products()" onblur="document.getElementById('searchbar').style.display = 'none'; document.getElementById('search-icon').style.display = 'inline'; document.getElementByClassName('category-Title').style.display = 'relative';" type="text" name="search" placeholder="Search Products.." style="display: none;">
-    <button id="search-icon" onclick="document.getElementById('searchbar').style.display = 'inline'; document.getElementById('search-icon').style.display = 'none'; document.getElementById('searchbar').focus(); document.getElementByClassName('category').style.display = 'none';">🔎</button>
+    <input id="searchbar" onkeyup="search_products()" type="text" placeholder="Search Products.." style="display: none;">
+    <button id="search-icon" onclick="document.getElementById('searchbar').style.display = 'inline'; document.getElementById('search-icon').style.display = 'none'; document.getElementById('searchbar').focus();">🔎</button>
     <a id="cart-icon" href="./checkout.html">🛒<span id="cart-count">0</span></a>
 </header>
 
@@ -30,7 +30,6 @@
 </div>
     
 <main>
-    
     <section id="products">
         <div id="product-container"></div>
     </section>
@@ -41,82 +40,5 @@
 </footer>
 
 <script src="scripts/products.js"></script>
-<script>
-// JavaScript code
-
-function search_products() {
-    let input = document.getElementById('searchbar').value
-    input = input.toLowerCase();
-    let x = document.getElementsByClassName('product');
-
-    for (i = 0; i < x.length; i++) {
-        if (!x[i].innerHTML.toLowerCase().includes(input)) {
-            x[i].style.display = "none";
-        }
-        else {
-            x[i].style.display = "flex";
-        }
-    }
-}
-
-</script>
-<script>
-    function toggleSidebar() {
-    let sidebar = document.getElementById("sidebar");
-    let openBtn = document.getElementById("open-btn");
-
-    if (sidebar.style.left === "" || sidebar.style.left === "-200px") {
-        sidebar.style.left = "0"; 
-        openBtn.style.left = "200px";
-    } else {
-        sidebar.style.left = "-200px"; 
-        openBtn.style.left = "0";
-    }
-}
-</script>
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    // Load cart from localStorage or initialize empty
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-    function updateCartCount() {
-        document.getElementById('cart-count').textContent = cart.length;
-    }
-
-    function addToCart(category, id) {
-        cart.push([category, id]);
-        localStorage.setItem('cart', JSON.stringify(cart)); // Update cart in localStorage
-        updateCartCount();
-        
-        document.getElementById('cart-icon').style.scale = '1.05';
-        setTimeout(function() {
-            document.getElementById('cart-icon').style.scale = '1.0';
-        }, 100);
-    }
-
-    // Listen for clicks on "Add to Cart" buttons inside products
-    document.body.addEventListener('click', (event) => {
-        if (event.target.classList.contains('add-to-cart')) {
-            const productElement = event.target.closest('.product'); // Find closest product container
-            if (!productElement) return;
-
-            const productId = productElement.id; // Get product ID
-            const categoryElement = productElement.parentElement; // Find the closest section
-            if (!categoryElement) return;
-
-            const productCategory = categoryElement.id; // Get category ID
-
-            // Ensure product exists in productData before adding
-            if (productData && productData[productCategory] && productData[productCategory][productId]) {
-                addToCart(productCategory, productId);
-            } else {
-                alert(`Produkt nicht gefunden. ${productCategory}/${productId}`);
-            }
-        }
-    });
-
-    // Run updateCartCount on page load
-    updateCartCount();});
-</script>
 </body>
 </html>
