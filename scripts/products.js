@@ -1,4 +1,4 @@
-// productData.js - Product data stored separately for modularity
+// Product data stored separately for modularity
 const productData = {
     "Nintendo": {
         "gameboy-classic": {
@@ -171,5 +171,81 @@ function generateProductLayout() {
     }
 }
 
-// Run function on page load
-document.addEventListener("DOMContentLoaded", generateProductLayout);
+// Cart functionality
+document.addEventListener('DOMContentLoaded', () => {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    function updateCartCount() {
+        document.getElementById('cart-count').textContent = cart.length;
+    }
+
+    function addToCart(category, id) {
+        cart.push([category, id]);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateCartCount();
+
+        // Temporary scale effect for cart icon
+        document.getElementById('cart-icon').style.scale = '1.05';
+        setTimeout(() => {
+            document.getElementById('cart-icon').style.scale = '1.0';
+        }, 100);
+    }
+
+    // Listen for clicks on "Add to Cart" buttons inside products
+    document.body.addEventListener('click', (event) => {
+        if (event.target.classList.contains('add-to-cart')) {
+            const productElement = event.target.closest('.product');
+            if (!productElement) return;
+
+            const productId = productElement.id;
+            const categoryElement = productElement.parentElement;
+            if (!categoryElement) return;
+
+            const productCategory = categoryElement.id;
+
+            if (productData && productData[productCategory] && productData[productCategory][productId]) {
+                addToCart(productCategory, productId);
+            } else {
+                alert(`Produkt nicht gefunden. ${productCategory}/${productId}`);
+            }
+        }
+    });
+
+    // Search functionality
+    function searchProducts() {
+        let input = document.getElementById('searchbar').value.toLowerCase();
+        let products = document.getElementsByClassName('product');
+
+        for (let i = 0; i < products.length; i++) {
+            if (!products[i].innerHTML.toLowerCase().includes(input)) {
+                products[i].style.display = "none";
+            } else {
+                products[i].style.display = "flex";
+            }
+        }
+    }
+
+    // Sidebar toggle functionality
+    function toggleSidebar() {
+        let sidebar = document.getElementById("sidebar");
+        let openBtn = document.getElementById("open-btn");
+
+        if (sidebar.style.left === "" || sidebar.style.left === "-200px") {
+            sidebar.style.left = "0";
+            openBtn.style.left = "200px";
+        } else {
+            sidebar.style.left = "-200px";
+            openBtn.style.left = "0";
+        }
+    }
+
+    // Attach search event listener
+    document.getElementById('searchbar')?.addEventListener('keyup', searchProducts);
+
+    // Attach sidebar toggle event listener
+    document.getElementById('open-btn')?.addEventListener('click', toggleSidebar);
+
+    // Load products and update cart count on page load
+    generateProductLayout();
+    updateCartCount();
+});
