@@ -74,11 +74,11 @@ function updateCart() {
 
         li.innerHTML = `
             <div class="cart-item-details">
-                <img src="${item.image}" alt="${item.name} Bild">
+                <img src="${item.image}" alt="${item.name}" width="50">
                 <span>${item.name}</span>
             </div>
             <div class="cart-item-amount">
-                <span><strong>${item.price.toFixed(2)}€ x${item.quantity}</strong></span>
+                <strong>${item.price.toFixed(2)}€ x ${item.quantity}</strong>
             </div>
             <div class="cart-controls">
                 <button class="increase" data-id="${item.id}" data-category="${item.category}">+</button>
@@ -93,7 +93,7 @@ function updateCart() {
     cartItemCount.innerText = `Produkte: ${cart.reduce((sum, item) => sum + item.quantity, 0)}`;
     totalPriceElement.innerText = `Summe: ${totalPrice.toFixed(2)}€`;
 
-    // Event listeners for cart controls
+    // Add event listeners for quantity change buttons
     document.querySelectorAll(".increase").forEach(button => {
         button.addEventListener("click", () => changeQuantity(button.dataset.category, button.dataset.id, 1));
     });
