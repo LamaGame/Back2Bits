@@ -40,6 +40,7 @@
 </footer>
 
 <script src="scripts/products.js"></script>
+<script src="scripts/checkout.js"></script>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
     // 1. Parse URL parameters to get category & product ID
@@ -67,15 +68,6 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("product-price").textContent = product.price.toFixed(2);
     document.getElementById("product-image").src = product.image;
     document.getElementById("product-image").alt = product.alt;
-
-    // 4. Handle Add to Cart button
-    document.getElementById("add-to-cart").addEventListener("click", function () {
-        let cart = JSON.parse(localStorage.getItem("cart")) || [];
-        cart.push([category, productId]);
-        localStorage.setItem("cart", JSON.stringify(cart));
-
-        alert(`${product.name} wurde zum Warenkorb hinzugefügt!`);
-    });
 });
 </script>
 
