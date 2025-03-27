@@ -1,34 +1,75 @@
 <!DOCTYPE html>
-<html lang="de" >
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Warenkorb</title>
+    <title>Produktdetails</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
+
 <header>
-    <h1>Back2Bits &nbsp; Checkout</h1>
+    <h1 id="product-title">Produktname</h1>
+    <a class="back-to-main" href="index.html">Zurück zum Shop</a>
 </header>
 
-<main id="checkout-page">
-    <h2>Dein Warenkorb</h2>
-    <ul id="cart-items">
-        <!-- Cart items will be dynamically added here -->
-    </ul>
-    <p id="cart-item-count"></p>
-    <p id="total-price"></p>
-    <button id="checkout-button">Zur Kasse</button>
-    <button id="back-button">Einkauf fortsetzen</button>
+<main id="product-details">
+    <div class="product-info">
+        <img id="product-image" src="" alt="">
+        <div class="details">
+            <h2 id="product-name"></h2>
+            <p id="product-description"></p>
+            <div class="quality-switch">
+                <input type="radio" id="q1" name="quality" checked>
+                <input type="radio" id="q2" name="quality">
+                <input type="radio" id="q3" name="quality">
+                <div class="quality-slider"></div>
+                <label for="q1" class="quality-option">Gut</label>
+                <label for="q2" class="quality-option">Sehr Gut</label>
+                <label for="q3" class="quality-option">Wie Neu</label>
+            </div>
+            <p><strong>Preis: <span id="product-price"></span>€</strong></p>
+            <button class="add-to-cart" id="add-to-cart">In den Warenkorb</button>
+        </div>
+    </div>
 </main>
 
-<footer style="position: fixed;">
+<footer>
     <p>&copy; 2024 Back2Bits. Keine Rechte vorbehalten.</p>
 </footer>
 
 <script src="scripts/products.js"></script>
 <script src="scripts/checkout.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    // 1. Parse URL parameters to get category & product ID
+    const urlParams = new URLSearchParams(window.location.search);
+    const category = urlParams.get("category");
+    const productId = urlParams.get("id");
+
+    if (!category || !productId) {
+        document.getElementById("product-details").innerHTML = "<p>Produkt nicht gefunden.</p>";
+        return;
+    }
+
+    // 2. Get the product from productData
+    const product = productData?.[category]?.[productId];
+
+    if (!product) {
+        document.getElementById("product-details").innerHTML = "<p>Produkt nicht gefunden.</p>";
+        return;
+    }
+
+    // 3. Update the page with product details
+    document.getElementById("product-title").textContent = product.name;
+    document.getElementById("product-name").textContent = product.name;
+    document.getElementById("product-description").textContent = product.description;
+    document.getElementById("product-price").textContent = product.price.toFixed(2);
+    document.getElementById("product-image").src = product.image;
+    document.getElementById("product-image").alt = product.alt;
+});
 </script>
+
 </body>
 </html>
