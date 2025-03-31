@@ -180,9 +180,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function addToCart(category, id) {
-        cart.push([category, id]);
-        localStorage.setItem('cart', JSON.stringify(cart));
-        updateCartCount();
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const existingProductIndex = cart.findIndex(item => item.category === category && item.id === id);
+    if (existingProductIndex !== -1) {
+        cart[existingProductIndex].quantity += 1;
+    } else {
+        cart.push({ category, id, quantity: 1 });
+    }
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartCount();
+}
 
         // Temporary scale effect for cart icon
         document.getElementById('cart-icon').style.scale = '1.05';
