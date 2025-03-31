@@ -189,6 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     localStorage.setItem('cart', JSON.stringify(cart));
     updateCartCount();
+    }
 }
 
         // Temporary scale effect for cart icon
